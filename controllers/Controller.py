@@ -17,3 +17,18 @@ class Controller():
     def main(self):
         self.view.main()
 
+    def on_start_session_click(self, server, user, password, workspace, project, root_folder):
+        try:
+            self.service = ServiceInstance(server, user, password).service
+            self.service.setWorkspace(workspace)
+            self.service.setProject(project)
+
+            if(root_folder != ""):
+                self.rootFolder = ServiceFolder(self.service, 'FormattedID = "' + root_folder + '"').testFolder
+                self.root_folder_formatted_id = root_folder
+
+            print("Session starts")
+
+            self.view.lock_save_test_cases_button()
+        except:
+            print("Communication error")
