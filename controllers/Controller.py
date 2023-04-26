@@ -32,3 +32,14 @@ class Controller():
             self.view.lock_save_test_cases_button()
         except:
             print("Communication error")
+            
+    def on_download_all_test_cases_click(self, credits, rootForTestCases, rootForFolders):
+        test_cases = self.model.download_all_test_cases(self.rootFolder,
+                                                        self.service,
+                                                        credits,
+                                                        rootForTestCases,
+                                                        rootForFolders)
+
+        self.file_helper.save_test_cases_into_file(test_cases)
+       
+
