@@ -42,4 +42,7 @@ class Controller():
 
         self.file_helper.save_test_cases_into_file(test_cases)
        
-
+    def on_upload_all_test_cases_click(self):
+        self.test_cases = self.model.upload_all_test_cases(self.file_helper.call_file_open_dialog())
+        self.view.set_upload_mode()
+        self.view.update_view(self.test_cases)
