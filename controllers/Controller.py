@@ -46,3 +46,15 @@ class Controller():
         self.test_cases = self.model.upload_all_test_cases(self.file_helper.call_file_open_dialog())
         self.view.set_upload_mode()
         self.view.update_view(self.test_cases)
+        
+    def on_find_test_cases_click(self, user_query_text):
+        self.model.clear_list_test_cases()
+        self.view.unlock_save_test_cases_button()
+        self.test_cases = self.model.run_query(self.service,
+                                               self.rootFolder,
+                                               self.view.setup_tab.get_credits(),
+                                               user_query_text,
+                                               self.view.setup_tab.get_project_for_test_cases(),
+                                               self.view.setup_tab.get_project_for_folders())
+        self.view.unlock_save_test_cases_button()
+        self.view.update_view(self.test_cases)
