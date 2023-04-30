@@ -58,3 +58,17 @@ class Controller():
                                                self.view.setup_tab.get_project_for_folders())
         self.view.unlock_save_test_cases_button()
         self.view.update_view(self.test_cases)
+        
+    def on_find_extra_test_cases_click(self, user_query_text):
+
+        if(user_query_text != ""):
+            test_cases, data_for_charts = self.model.run_extra_query(user_query_text)
+
+            if(len(test_cases) == 0):
+                print("Test cases were not found")
+                self.view.update_view_null_result()
+            else:
+                #update test cases list
+                self.view.update_view(test_cases)
+
+                self.view.update_view_extended_details(data_for_charts, len(self.model.get_test_cases()))
