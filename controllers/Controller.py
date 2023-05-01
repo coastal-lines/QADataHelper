@@ -60,7 +60,6 @@ class Controller():
         self.view.update_view(self.test_cases)
         
     def on_find_extra_test_cases_click(self, user_query_text):
-
         if(user_query_text != ""):
             test_cases, data_for_charts = self.model.run_extra_query(user_query_text)
 
@@ -72,3 +71,6 @@ class Controller():
                 self.view.update_view(test_cases)
 
                 self.view.update_view_extended_details(data_for_charts, len(self.model.get_test_cases()))
+                
+    def on_save_found_test_cases_click(self):
+        self.file_helper.save_test_cases_into_file(self.test_cases)
