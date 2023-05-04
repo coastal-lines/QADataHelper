@@ -33,4 +33,17 @@ class CalculationStatisticsForTestCaseFields:
 
         return len(number_steps), average_number_lines_of_steps
 
- 
+    def get_average_duration_for_test_cases(self, test_cases):
+        manual_time_duration = 0
+        auto_time_duration = 0
+
+        for tc in test_cases:
+            if (tc.TotalDuration != 0):
+                if(tc.Method == "Manual"):
+                    manual_time_duration += tc.TotalDuration
+                else:
+                    auto_time_duration += tc.TotalDuration
+
+        return manual_time_duration, auto_time_duration
+
+
