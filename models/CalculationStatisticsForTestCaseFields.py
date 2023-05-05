@@ -45,5 +45,12 @@ class CalculationStatisticsForTestCaseFields:
                     auto_time_duration += tc.TotalDuration
 
         return manual_time_duration, auto_time_duration
+        
+    def get_number_defects_for_test_cases(self, test_cases):
+        number_defects = 0
+        for tc in test_cases:
+            number_defects += tc.DefectsInformation.get_total_number_defect()
+
+        return number_defects
 
 
