@@ -52,5 +52,15 @@ class CalculationStatisticsForTestCaseFields:
             number_defects += tc.DefectsInformation.get_total_number_defect()
 
         return number_defects
+        
+    def get_number_severities_for_defects(self, test_cases):
+        severities = (0,0,0,0,0)
+
+        for tc in test_cases:
+            severities_temp = tc.DefectsInformation.get_severities()
+            tuple(map(sum, zip(severities, severities_temp)))
+            severities = tuple(map(operator.add, severities, severities_temp))
+
+        return severities
 
 
