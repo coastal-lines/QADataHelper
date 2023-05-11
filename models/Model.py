@@ -11,3 +11,6 @@ class Model:
         self.tc_helper = ParsingTestCaseFields(self.server, self.test_case_fields)
 
         self.query_formater = QueryFormatter()
+
+    def clear_list_test_cases(self):
+        self.list_test_cases.clear()
