@@ -14,3 +14,6 @@ class Model:
 
     def clear_list_test_cases(self):
         self.list_test_cases.clear()
+
+    def get_test_cases(self):
+        return self.list_test_cases
