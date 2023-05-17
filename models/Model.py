@@ -17,3 +17,23 @@ class Model:
 
     def get_test_cases(self):
         return self.list_test_cases
+        
+    def run_extra_query(self, query):
+        all_test_cases_result = []
+        result = None
+        result_for_statistics_tab = []
+
+        self.list_combined_queries = self.query_formater.split_raw_query_by_logical_operator(query)
+        for queries in self.list_combined_queries:
+            temp_result = None
+            result = []
+            for user_query in queries.get_queries():
+                temp_result = self.query_formater._select_test_cases_by_query(self.list_test_cases, self.test_case_fields, user_query.where, user_query.text)
+                result = self.extend_test_case_list(temp_result, result)
+
+            result_for_statistics_tab.append((result, queries))
+            all_test_cases_result = self.extend_test_case_list(all_test_cases_result, result)
+
+        print("finish: " + str(len(result)))
+
+        return all_test_cases_result, result_for_statistics_tab
