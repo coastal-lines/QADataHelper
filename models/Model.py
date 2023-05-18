@@ -37,3 +37,10 @@ class Model:
         print("finish: " + str(len(result)))
 
         return all_test_cases_result, result_for_statistics_tab
+        
+    def extend_test_case_list(self, parent_list, temp_list):
+        for temp_tc in temp_list:
+            if(len([tc for tc in parent_list if tc.FormattedID == temp_tc.FormattedID]) == 0):
+                parent_list.append(temp_tc)
+
+        return parent_list
