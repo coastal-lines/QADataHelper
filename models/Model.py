@@ -44,3 +44,20 @@ class Model:
                 parent_list.append(temp_tc)
 
         return parent_list
+        
+    def run_query(self, service, rootFolder, credits, user_query_text, rootForTestCases, rootForFolders):
+        # get response with User's query
+        testCasesFromUserQuery = ApiServiceHelper().get_test_case(service, user_query_text)
+
+        for number in range(testCasesFromUserQuery.resultCount):
+            tc = testCasesFromUserQuery.next()
+            tcObject = self._init_test_case_as_object(tc, service, credits, rootForTestCases, rootForFolders)
+            self.list_test_cases.append(tcObject)
+
+            #TODO - debug
+            print(len(self.list_test_cases))
+            if((len(self.list_test_cases) / 500).is_integer()):
+                print("sleep")
+                sleep(91)
+
+        return self.list_test_cases
