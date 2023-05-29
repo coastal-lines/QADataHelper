@@ -61,3 +61,7 @@ class Model:
                 sleep(91)
 
         return self.list_test_cases
+        
+    def upload_all_test_cases(self, file_path):
+        self.list_test_cases = self.file_helper.load_files(file_path)
+        return self.list_test_cases
