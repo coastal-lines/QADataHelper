@@ -65,3 +65,20 @@ class Model:
     def upload_all_test_cases(self, file_path):
         self.list_test_cases = self.file_helper.load_files(file_path)
         return self.list_test_cases
+        
+    #AREA OF HELPFUL METHODS
+    def _init_test_case_as_object(self, test_case, service, credits, rootForTestCases, rootForFolders):
+        current_tc = ServiceTestCase()
+
+        for attr_number in range(len(self.test_case_fields)):
+            self.tc_helper.apply_custom_field_for_test_case(service, current_tc, test_case, attr_number, credits, rootForTestCases, rootForFolders)
+
+            #if field equesl None set empty string
+            if(current_tc.__getattribute__(self.test_case_fields[attr_number]) == None):
+                current_tc.__setattr__(self.test_case_fields[attr_number], "")
+
+        print(current_tc.Name)
+
+        return current_tc
+
+    #REGION: donload all tc from folder
