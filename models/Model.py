@@ -82,3 +82,13 @@ class Model:
         return current_tc
 
     #REGION: donload all tc from folder
+    
+    def download_all_test_cases(self, root_folder, service, credits, rootForTestCases, rootForFolders):
+        self.list_test_cases.clear()
+
+        if (len(root_folder.TestCases) > 0 or len(root_folder.Children)):
+            self._extract_test_cases_from_folder(root_folder, credits, service, rootForTestCases, rootForFolders)
+
+        print("Size: " + str(len(self.list_test_cases)))
+
+        return self.list_test_cases
