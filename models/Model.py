@@ -92,3 +92,24 @@ class Model:
         print("Size: " + str(len(self.list_test_cases)))
 
         return self.list_test_cases
+        
+    _folder_list = []
+    def _extract_test_cases_from_folder(self, folder, credits, service, rootForTestCases, rootForFolders):
+        self._folder_list.append(folder.Name)
+
+        if len(folder.TestCases) > 0:
+            for testCase in folder.TestCases:
+                tc = self._init_test_case_as_object(testCase, service, credits, rootForTestCases, rootForFolders)
+                self.list_test_cases.append(tc)
+                #print(tc.__getattribute__("Parents"))
+
+                # TODO - debug
+                print(len(self.list_test_cases))
+                if ((len(self.list_test_cases) / 500).is_integer()):
+                    print("sleep")
+                    sleep(91)
+
+        if len(folder.Children) > 0:
+            self._extract_folders(folder.Children, credits, service, rootForTestCases, rootForFolders)
+            if(len(self._folder_list) > 1):
+                self._folder_list.pop(-1)
