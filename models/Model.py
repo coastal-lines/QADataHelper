@@ -113,3 +113,9 @@ class Model:
             self._extract_folders(folder.Children, credits, service, rootForTestCases, rootForFolders)
             if(len(self._folder_list) > 1):
                 self._folder_list.pop(-1)
+                
+    def _extract_folders(self, folders, credits, service, rootForTestCases, rootForFolders):
+        for folder in folders:
+            self._extract_test_cases_from_folder(folder, credits, service, rootForTestCases, rootForFolders)
+
+    #END_REGION
