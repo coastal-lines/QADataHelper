@@ -10,4 +10,7 @@ class ParsingTestCaseFields:
 
         self.__previous_test_case_folder_name = None
         self.__previous_parents = None
+        
+    def _set_field_for_test_case(self, current_tc_as_object, number_position, value):
+        current_tc_as_object.__setattr__(self.test_case_fields[number_position], value)
 
