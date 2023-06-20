@@ -14,3 +14,5 @@ class ParsingTestCaseFields:
     def _set_field_for_test_case(self, current_tc_as_object, number_position, value):
         current_tc_as_object.__setattr__(self.test_case_fields[number_position], value)
 
+    def _get_simple_field_as_string(self, test_case, attr_number):
+        return getattr(test_case, self.test_case_fields[attr_number])
