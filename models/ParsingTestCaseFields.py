@@ -16,3 +16,18 @@ class ParsingTestCaseFields:
 
     def _get_simple_field_as_string(self, test_case, attr_number):
         return getattr(test_case, self.test_case_fields[attr_number])
+        
+    def _get_total_duration_for_one_test_case(self, objectID, credits):
+        results = self.api.get_total_duration(objectID, credits)
+
+        total_time = 0
+        number_results_with_duration = 0
+        for result in results:
+            if (result["Duration"] != None):
+                total_time += result["Duration"]
+                number_results_with_duration += 1
+
+        if(total_time != 0):
+            total_time = total_time / number_results_with_duration
+
+        return total_time
