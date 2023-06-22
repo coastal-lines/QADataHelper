@@ -31,3 +31,6 @@ class ParsingTestCaseFields:
             total_time = total_time / number_results_with_duration
 
         return total_time
+        
+    def _get_project_as_string(self, test_case, attr_number):
+        return getattr(test_case, self.test_case_fields[attr_number]).Name
