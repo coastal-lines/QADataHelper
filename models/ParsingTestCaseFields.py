@@ -34,3 +34,9 @@ class ParsingTestCaseFields:
         
     def _get_project_as_string(self, test_case, attr_number):
         return getattr(test_case, self.test_case_fields[attr_number]).Name
+        
+    def _get_test_folder_as_string(self, test_case, attr_number):
+        if (test_case.TestFolder == None):
+           return ""
+        else:
+            return getattr(test_case, self.test_case_fields[attr_number]).Name
