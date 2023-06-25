@@ -40,3 +40,9 @@ class ParsingTestCaseFields:
            return ""
         else:
             return getattr(test_case, self.test_case_fields[attr_number]).Name
+            
+    def _get_work_product_as_string(self, test_case, attr_number):
+        if (test_case.WorkProduct == None):
+            return ""
+        else:
+            return getattr(test_case, self.test_case_fields[attr_number]).FormattedID
