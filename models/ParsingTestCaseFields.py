@@ -46,3 +46,12 @@ class ParsingTestCaseFields:
             return ""
         else:
             return getattr(test_case, self.test_case_fields[attr_number]).FormattedID
+            
+    def _get_tags_as_string_list(self, test_case):
+        tags = []
+
+        list_tags = test_case.Tags
+        for tag in list_tags:
+            tags.append(tag.Name)
+
+        return tags
