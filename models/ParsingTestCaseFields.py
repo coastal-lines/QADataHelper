@@ -55,3 +55,21 @@ class ParsingTestCaseFields:
             tags.append(tag.Name)
 
         return tags
+        
+    def _get_inputs_as_string_list(self, test_case):
+        inputs = []
+
+        list_steps = test_case.Steps
+        for item in list_steps:
+            inputs.append(item.Input)
+
+        return inputs
+
+    def _get_expecteds_as_string_list(self, test_case):
+        expecteds = []
+
+        list_steps = test_case.Steps
+        for item in list_steps:
+            expecteds.append(item.ExpectedResult)
+
+        return expecteds
