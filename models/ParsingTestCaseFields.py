@@ -73,3 +73,11 @@ class ParsingTestCaseFields:
             expecteds.append(item.ExpectedResult)
 
         return expecteds
+        
+    def _get_defects(self, test_case, credits):
+        raw_defects_json_result = self.api.get_defects(test_case.ObjectID, credits)
+        defects = ServiceDefects()
+        defects.set_total_number_defect(raw_defects_json_result)
+        defects.set_severities(raw_defects_json_result)
+
+        return defects
