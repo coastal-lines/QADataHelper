@@ -1,4 +1,6 @@
-
+from service_components.ServiceDefects import ServiceDefects
+from utils.TestCaseUtils.RestHelper import RestApi
+from utils.TestCaseUtils.ServiceHelper import ApiServiceHelper
 
 class ParsingTestCaseFields:
 
@@ -81,3 +83,13 @@ class ParsingTestCaseFields:
         defects.set_severities(raw_defects_json_result)
 
         return defects
+        
+    def _get_list_of_parents(self, service, testFolderFormattedID, parents):
+        temp_parents = parents
+
+        folder = ApiServiceHelper().get_parent_folder(service, testFolderFormattedID)
+        temp_parents.update({folder.FormattedID: folder.Name})
+        if(folder.Parent != None):
+            self._get_list_of_parents(service, folder.FormattedID, temp_parents)
+        else:
+            return temp_parents
