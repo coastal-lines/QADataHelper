@@ -93,3 +93,36 @@ class ParsingTestCaseFields:
             self._get_list_of_parents(service, folder.FormattedID, temp_parents)
         else:
             return temp_parents
+            
+    parents = None
+    def _get_parents_as_string_graph(self, service, test_case, rootForFolders, rootForTestCases):
+        # set parents for building tree structure later
+        parents = dict()
+
+        if (test_case.TestFolder != None):
+
+            #check if parents are the same like for previous test case
+            if(test_case.TestFolder.Name == self.__previous_test_case_folder_name):
+                self.__previous_parents.popitem()
+                self.__previous_parents.update({test_case.FormattedID: test_case.Name})
+                parents = self.__previous_parents
+            else:
+                parents = dict()
+                parents.update({test_case.FormattedID: test_case.Name})
+                parents.update({test_case.TestFolder.FormattedID: test_case.TestFolder.Name})
+
+                service.setProject(rootForFolders)
+
+                self._get_list_of_parents(service, test_case.TestFolder.FormattedID, parents)
+                reversed_parents = dict()
+                for j in range(len(list(parents)) - 1, -1, -1):
+                    reversed_parents.update({list(parents)[j]: parents[list(parents)[j]]})
+
+                parents = reversed_parents
+
+                service.setProject(rootForTestCases)
+
+                self.__previous_test_case_folder_name = test_case.TestFolder.Name
+                self.__previous_parents = parents
+
+        return parents.copy()
