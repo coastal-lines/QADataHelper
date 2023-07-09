@@ -126,3 +126,26 @@ class ParsingTestCaseFields:
                 self.__previous_parents = parents
 
         return parents.copy()
+        
+    def apply_custom_field_for_test_case(self, service, current_tc_as_object, test_case, attr_number, credits, rootForTestCases, rootForFolders):
+        match self.test_case_fields[attr_number]:
+            case "Project":
+                self._set_field_for_test_case(current_tc_as_object, attr_number, self._get_project_as_string(test_case, attr_number))
+            case "TestFolder":
+                self._set_field_for_test_case(current_tc_as_object, attr_number, self._get_test_folder_as_string(test_case, attr_number))
+            case "WorkProduct":
+                self._set_field_for_test_case(current_tc_as_object, attr_number, self._get_work_product_as_string(test_case, attr_number))
+            case "Tags":
+                self._set_field_for_test_case(current_tc_as_object, attr_number, self._get_tags_as_string_list(test_case))
+            case "Inputs":
+                self._set_field_for_test_case(current_tc_as_object, attr_number, self._get_inputs_as_string_list(test_case))
+            case "Expecteds":
+                self._set_field_for_test_case(current_tc_as_object, attr_number, self._get_expecteds_as_string_list(test_case))
+            case "DefectsInformation":
+                self._set_field_for_test_case(current_tc_as_object, attr_number, self._get_defects(test_case, credits))
+            case "TotalDuration":
+                self._set_field_for_test_case(current_tc_as_object, attr_number, self._get_total_duration_for_one_test_case(test_case.ObjectID, credits))
+            case "Parents":
+                self._set_field_for_test_case(current_tc_as_object, attr_number, self._get_parents_as_string_graph(service, test_case, rootForFolders, rootForTestCases))
+            case _:
+                self._set_field_for_test_case(current_tc_as_object, attr_number, self._get_simple_field_as_string(test_case, attr_number))
