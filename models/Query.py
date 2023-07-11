@@ -7,3 +7,6 @@ class UserQueryObject:
         self.condition = condition
         self.text = text
 
+class UserQueriesObject:
+    def __init__(self):
+        self.__userQueriesObjects = []
