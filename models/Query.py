@@ -1,4 +1,4 @@
-#import re
+import re
 
 class UserQueryObject:
     def __init__(self, original_query, where, condition, text):
@@ -16,3 +16,12 @@ class UserQueriesObject:
 
     def get_queries(self):
         return self.__userQueriesObjects
+        
+class QueryFormatter:
+    def try_regexp(self, raw_query):
+
+        #split raw query by brackets
+        pattern = r"\((.*?)\)"
+        result = re.findall(pattern, raw_query)
+
+        return result
