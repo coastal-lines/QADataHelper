@@ -25,3 +25,29 @@ class QueryFormatter:
         result = re.findall(pattern, raw_query)
 
         return result
+        
+    def split_raw_query_into_combined_queries(self, raw_query):
+        combined_queries = self.try_regexp(raw_query)
+
+        return combined_queries
+
+    def split_raw_query_by_logical_operator(self, raw_query):
+        combined_queries = self.split_raw_query_into_combined_queries(raw_query)
+
+        user_queries = []
+        for combined_query in combined_queries:
+            user_queries.append(UserQueriesObject())
+
+            if ("OR" in combined_query):
+                list_queries = combined_query.split("OR")
+
+                for query in list_queries:
+                    w, c, t = self._split_each_query(query)
+                    user_query = UserQueryObject(query, w, c, t)
+                    user_queries[-1].add_query(user_query)
+            else:
+                w, c, t = self._split_each_query(combined_query)
+                user_query = UserQueryObject(combined_query, w, c, t)
+                user_queries[-1].add_query(user_query)
+
+        return user_queries
