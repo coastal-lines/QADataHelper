@@ -51,3 +51,17 @@ class QueryFormatter:
                 user_queries[-1].add_query(user_query)
 
         return user_queries
+        
+    def _split_each_query(self, raw_query):
+        words = raw_query.split(" ")
+
+        #if query starts from space then remove this
+        if (words[0] == " " or words[0] == ""):
+            words.pop(0)
+
+        where = words[0]
+        condition = words[1]
+        text = raw_query[raw_query.find('"') + 1:-1].strip('"')
+        print("where: " + where, "condition: " + condition, "text: " + text)
+
+        return where, condition, text
