@@ -65,3 +65,18 @@ class QueryFormatter:
         print("where: " + where, "condition: " + condition, "text: " + text)
 
         return where, condition, text
+        
+    def _select_test_cases_by_query(self, list_test_cases, test_case_fields, where, text):
+        result = []
+
+        for test_case in list_test_cases:
+            for field in test_case_fields:
+                if (where.lower() == field.lower()):
+
+                    current_test_case_value = test_case.__getattribute__(where)
+
+                    if(self._try_to_find_user_query_in_string(current_test_case_value, text)):
+                        result.append(test_case)
+                        continue
+
+        return result
