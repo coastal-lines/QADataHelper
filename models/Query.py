@@ -80,3 +80,14 @@ class QueryFormatter:
                         continue
 
         return result
+        
+    def _try_to_find_user_query_in_string(self, current_test_case_value, text):
+        is_user_query_in_text = False
+
+        if (isinstance(current_test_case_value, str)):
+            if (text.lower() in str(current_test_case_value).lower()):
+                is_user_query_in_text = True
+        else:
+            is_user_query_in_text = self._try_to_find_user_query_in_list(current_test_case_value, text)
+
+        return is_user_query_in_text
