@@ -91,3 +91,12 @@ class QueryFormatter:
             is_user_query_in_text = self._try_to_find_user_query_in_list(current_test_case_value, text)
 
         return is_user_query_in_text
+        
+    def _try_to_find_user_query_in_list(self, current_test_case_value, text):
+        if(current_test_case_value, list):
+            full_text = ""
+            for item in current_test_case_value:
+                full_text = full_text + " " + str(item)
+
+            if (text.lower() in full_text.lower()):
+                return True
