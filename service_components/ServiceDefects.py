@@ -33,3 +33,10 @@ class ServiceDefects:
                 case "P5":
                     self.__total_number_severity_p5 += 1
                     continue
+
+    def get_severities(self):
+        return (self.__total_number_severity_p1,
+                self.__total_number_severity_p2,
+                self.__total_number_severity_p3,
+                self.__total_number_severity_p4,
+                self.__total_number_severity_p5)
