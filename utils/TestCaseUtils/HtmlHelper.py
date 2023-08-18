@@ -40,3 +40,38 @@ class HtmlHelper:
                 currentTree = currentTree[value]
 
         return tree, list_test_cases_without_parents
+        
+    # update_tree_tab_view step 2
+    def traversal_tree(self, tree, html_document, list_test_cases_without_parents):
+        root = html_document.find_all("ul")[-1]
+
+        for k in tree:
+            if (len(html_document.find_all("li", string=k)) == 0):
+                new_li = html_document.new_tag("li")
+                new_li['style'] = "font-size: 10px;"
+                if(k.startswith('TC')):
+                    new_li.string = k.replace(":", "")
+                else:
+                    new_li.string = k
+                new_ul = html_document.new_tag("ul")
+                root.append(new_li)
+                root.append(new_ul)
+            else:
+                new_li = html_document.new_tag("li")
+                new_li['style'] = "font-size: 10px;"
+                if (k.startswith('TC')):
+                    new_li.string = k.replace(":", "")
+                else:
+                    new_li.string = k
+                new_ul = html_document.new_tag("ul")
+
+                last_ul = html_document.find_all("ul")[-1]
+                last_ul.append(new_li)
+                last_ul.append(new_ul)
+
+            if (len(tree[k]) > 0):
+                self.traversal_tree(tree[k], html_document, list_test_cases_without_parents)
+            else:
+                new_ul = html_document.new_tag("ul")
+                last_ul = html_document.find_all("ul")[-1]
+                last_ul.append(new_ul)
