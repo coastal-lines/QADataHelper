@@ -75,3 +75,31 @@ class HtmlHelper:
                 new_ul = html_document.new_tag("ul")
                 last_ul = html_document.find_all("ul")[-1]
                 last_ul.append(new_ul)
+
+    #some of test cases can be without parents
+    def add_unstructured_test_cases_into_html(self, html_document, list_test_cases_without_parents):
+        unstructured_h3 = html_document.new_tag("h3")
+        new_ul = html_document.new_tag("ul")
+
+        for tc in list_test_cases_without_parents:
+            new_li = html_document.new_tag("li")
+            new_li['style'] = "font-size: 10px;"
+            new_li.string = tc.FormattedID + ": " + tc.Name
+            new_ul.append(new_li)
+
+        root = html_document.find("body")
+        unstructured_h3.string = "Unstructured test cases:"
+        root.append(unstructured_h3)
+        root.append(new_ul)
+        
+    def create_html(self, list):
+        html_base = "<html><body><h3>Structure of test cases:</h3><ul id='main'></ul></html>"
+        html_document = BeautifulSoup(html_base, 'html.parser')
+        tree, list_test_cases_without_parents = self.formTree(list)
+        self.traversal_tree(tree, html_document, list_test_cases_without_parents)
+
+        if (len(list_test_cases_without_parents) > 0):
+            self.add_unstructured_test_cases_into_html(html_document, list_test_cases_without_parents)
+
+        #print(html_document.prettify())
+        return html_document
