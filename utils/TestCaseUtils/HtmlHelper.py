@@ -103,3 +103,15 @@ class HtmlHelper:
 
         #print(html_document.prettify())
         return html_document
+        
+    #for tc steps
+    def get_str_list_from_html(self, raw_html_array):
+
+        html_base = ""
+        html_document = BeautifulSoup(html_base, 'html.parser')
+        for line in raw_html_array:
+            html_document.append(line)
+        prt = html_document.prettify()
+        str_list = list(filter(None, prt.split("\n")))
+
+        return str_list
