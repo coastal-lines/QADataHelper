@@ -2,6 +2,14 @@ import pickle
 from tkinter import filedialog as fd
 
 class FileHelper:
+    def save_test_cases_into_file(self, test_cases):
+        file_path = self.call_file_save_dialog()
+
+        with open(file_path, 'w+b') as file:
+            pickle.dump(test_cases, file)
+
+        print("Test cases were saved")
+
     def load_files(self, file_path):
 
         files = None
