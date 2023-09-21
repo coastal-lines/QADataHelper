@@ -17,6 +17,10 @@ class FileHelper:
             files = pickle.load(file)
 
         return files
+        
+    def call_file_save_dialog(self):
+        file_path = fd.asksaveasfilename(filetypes=[("Test Cases", ".data")], defaultextension=".data")
+        return file_path
 
     def call_file_open_dialog(self):
         file_path = fd.askopenfilename()
