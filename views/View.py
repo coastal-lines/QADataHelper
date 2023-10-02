@@ -4,6 +4,9 @@ from tkinter import ttk
 
 class View(tk.Tk):
     setup_tab = None
+    
+    login = None
+    password = None
 
     def __init__(self, controller):
         super().__init__()
@@ -24,3 +27,8 @@ class View(tk.Tk):
     def main(self):
         # endles loop for wait any user interactions - will works during window is opened
         self.mainloop()
+        
+	#create container for tabs
+    def _private_make_tab_control(self):
+        self.tabControl = ttk.Notebook(self)
+        self.tabControl.place(x = 0, y = 0, width = 1200, height = 730)
