@@ -32,3 +32,6 @@ class View(tk.Tk):
     def _private_make_tab_control(self):
         self.tabControl = ttk.Notebook(self)
         self.tabControl.place(x = 0, y = 0, width = 1200, height = 730)
+        
+    def get_credits(self):
+        return ConverterBase64().convert_into_base64(self.login.get() + ":" + self.password.get())
