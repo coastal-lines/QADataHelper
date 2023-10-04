@@ -5,6 +5,10 @@ from tkinter import ttk
 class View(tk.Tk):
     setup_tab = None
     
+    main_frame = None
+    query_frame = None
+    details_frame = None
+    
     login = None
     password = None
 
