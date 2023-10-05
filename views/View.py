@@ -1,5 +1,8 @@
 import tkinter as tk
 from tkinter import ttk
+from bs4 import BeautifulSoup
+
+from utils.ConverterBase64 import ConverterBase64
 
 
 class View(tk.Tk):
