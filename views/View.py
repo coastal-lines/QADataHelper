@@ -42,3 +42,11 @@ class View(tk.Tk):
         
     def get_credits(self):
         return ConverterBase64().convert_into_base64(self.login.get() + ":" + self.password.get())
+        
+    def set_upload_mode(self):
+        #user can works with uploaded tests only
+        self.setup_tab.button_download_test_cases["state"] = "disabled"
+        self.setup_tab.button_start_session["state"] = "disabled"
+        self.query_tab.button_find_test_cases["state"] = "disabled"
+        self.query_tab.button_save_test_cases["state"] = "disabled"
+        self.query_tab.query_text["state"] = "disabled"
