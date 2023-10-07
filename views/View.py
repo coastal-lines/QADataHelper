@@ -2,6 +2,9 @@ import tkinter as tk
 from tkinter import ttk
 from bs4 import BeautifulSoup
 
+#from views.Statistics.StatisticsTabs import StatisticsTabs
+#from views.Setup.SetupTab import SetupTab
+#from views.Query.QueryTab import QueryTab
 from utils.ConverterBase64 import ConverterBase64
 
 
@@ -50,3 +53,9 @@ class View(tk.Tk):
         self.query_tab.button_find_test_cases["state"] = "disabled"
         self.query_tab.button_save_test_cases["state"] = "disabled"
         self.query_tab.query_text["state"] = "disabled"
+        
+    def lock_save_test_cases_button(self):
+        self.query_tab.button_save_test_cases["state"] = "disabled"
+
+    def unlock_save_test_cases_button(self):
+        self.query_tab.button_save_test_cases["state"] = "normal"
