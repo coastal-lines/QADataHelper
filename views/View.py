@@ -59,3 +59,6 @@ class View(tk.Tk):
 
     def unlock_save_test_cases_button(self):
         self.query_tab.button_save_test_cases["state"] = "normal"
+        
+    def get_server_instance(self):
+        return self.setup_tab.server_text.get()
