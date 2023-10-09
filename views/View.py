@@ -2,9 +2,9 @@ import tkinter as tk
 from tkinter import ttk
 from bs4 import BeautifulSoup
 
-#from views.Statistics.StatisticsTabs import StatisticsTabs
-#from views.Setup.SetupTab import SetupTab
-#from views.Query.QueryTab import QueryTab
+from views.Statistics.StatisticsTabs import StatisticsTabs
+from views.Setup.SetupTab import SetupTab
+from views.Query.QueryTab import QueryTab
 from utils.ConverterBase64 import ConverterBase64
 
 
@@ -35,7 +35,7 @@ class View(tk.Tk):
         self.statistics_tabs = StatisticsTabs(self.query_tab.get_query_tab_frame())
 
     def main(self):
-        # endles loop for wait any user interactions - will works during window is opened
+        #endles loop for wait any user interactions - will works during window is opened
         self.mainloop()
         
 	#create container for tabs
@@ -62,3 +62,8 @@ class View(tk.Tk):
         
     def get_server_instance(self):
         return self.setup_tab.server_text.get()
+        
+    def update_view(self, test_cases):
+        self.statistics_tabs.update_list_tab(test_cases)
+        self.statistics_tabs.update_structure_tab(test_cases)
+        self.statistics_tabs.update_details(test_cases)
