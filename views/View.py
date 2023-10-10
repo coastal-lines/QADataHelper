@@ -67,3 +67,6 @@ class View(tk.Tk):
         self.statistics_tabs.update_list_tab(test_cases)
         self.statistics_tabs.update_structure_tab(test_cases)
         self.statistics_tabs.update_details(test_cases)
+        
+    def update_view_extended_details(self, prepared_data, number_all_test_cases):
+        self.statistics_tabs.update_extended_details(prepared_data, number_all_test_cases)
