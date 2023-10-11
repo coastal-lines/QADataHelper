@@ -70,3 +70,13 @@ class View(tk.Tk):
         
     def update_view_extended_details(self, prepared_data, number_all_test_cases):
         self.statistics_tabs.update_extended_details(prepared_data, number_all_test_cases)
+        
+    def update_view_null_result(self):
+        #update List of test cases
+        self.statistics_tabs.list_tab.text_for_list_result.delete(0.0, tk.END)
+        self.statistics_tabs.list_tab.text_for_list_result.insert(0.0, "No results")
+
+        #update Structure of test cases
+        html_base = "<html><body><h3>No results</h3><ul id='main'></ul></html>"
+        html_document = BeautifulSoup(html_base, 'html.parser')
+        self.statistics_tabs.structure_tab.html_frame.load_html(str(html_document.contents[0]))
