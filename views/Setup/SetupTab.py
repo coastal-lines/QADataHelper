@@ -17,3 +17,8 @@ class SetupTab:
         self.label_user.place(x=0, y=20, width=100)
         self.login = tk.Entry(master=self.main_frame)
         self.login.place(x=100, y=20, width=200)
+        
+        self.label_password = tk.Label(master=self.main_frame, text="Password:")
+        self.label_password.place(x=0, y=40, width=100)
+        self.password = tk.Entry(master=self.main_frame, show="*")
+        self.password.place(x=100, y=40, width=200)
