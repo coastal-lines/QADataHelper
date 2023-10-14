@@ -37,3 +37,20 @@ class SetupTab:
         self.label_project_folders.place(x=0, y=100, width=100)
         self.project_text_folders = tk.Entry(master=self.main_frame)
         self.project_text_folders.place(x=100, y=100, width=200)
+        
+        self.label_root_folder = tk.Label(master=self.main_frame, text="Root folder:")
+        self.label_root_folder.place(x=0, y=160, width=100)
+        self.root_folder_text = tk.Entry(master=self.main_frame)
+        self.root_folder_text.place(x=100, y=160, width=200)
+        self.button_start_session = tk.Button(master=self.main_frame, text="Start session",
+                                             command=lambda: self.controller.on_start_session_click
+                                                 (
+                                                     self.server_text.get(),
+                                                     self.login.get(),
+                                                     self.password.get(),
+                                                     self.workspace_text.get(),
+                                                     self.project_text.get(),
+                                                     self.root_folder_text.get())
+                                                )
+
+        self.button_start_session.place(x=100, y=120, width=200)
