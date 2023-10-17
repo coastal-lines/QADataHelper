@@ -54,3 +54,13 @@ class SetupTab:
                                                 )
 
         self.button_start_session.place(x=100, y=120, width=200)
+        
+        self.button_download_test_cases = tk.Button(master=self.main_frame,
+                                               text="Download data from root folder",
+                                               command=lambda: self.controller.on_download_all_test_cases_click
+                                                   (
+                                                       self.get_credits(),
+                                                       self.project_text.get(),
+                                                       self.project_text_folders.get())
+                                                    )
+        self.button_download_test_cases.place(x=100, y=180, width=200)
