@@ -63,4 +63,5 @@ class SetupTab:
                                                        self.project_text.get(),
                                                        self.project_text_folders.get())
                                                     )
+
         self.button_download_test_cases.place(x=100, y=180, width=200)
