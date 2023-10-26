@@ -65,3 +65,11 @@ class SetupTab:
                                                     )
 
         self.button_download_test_cases.place(x=100, y=180, width=200)
+        
+        self.label_upload_data = tk.Label(master=self.main_frame, text="Load data:")
+        self.label_upload_data.place(x=0, y=220, width=100)
+        self.button_upload_test_cases = tk.Button(master=self.main_frame,
+                                             text="Upload data",
+                                             command=self.controller.on_upload_all_test_cases_click)
+
+        self.button_upload_test_cases.place(x=100, y=220, width=200)
