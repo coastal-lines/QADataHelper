@@ -73,11 +73,15 @@ class SetupTab:
                                              command=self.controller.on_upload_all_test_cases_click)
 
         self.button_upload_test_cases.place(x=100, y=220, width=200)
-        
-        #self.DEBUG_()
-        
+                
         def get_setup_tab_frame(self):
             return self.main_frame
 
         def get_project_for_test_cases(self):
             return self.project_text.get()
+            
+            def get_project_for_folders(self):
+        return self.project_text_folders.get()
+
+        def get_root_folder(self):
+            return self.root_folder_text.get()
