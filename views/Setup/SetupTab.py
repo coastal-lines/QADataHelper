@@ -85,3 +85,7 @@ class SetupTab:
 
         def get_root_folder(self):
             return self.root_folder_text.get()
+            
+        def get_credits(self):
+            user_credits = self.login.get() + ":" + self.password.get()
+            return ConverterBase64().convert_into_base64(user_credits)
