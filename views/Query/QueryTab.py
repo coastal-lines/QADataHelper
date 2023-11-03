@@ -18,6 +18,11 @@ class QueryTab:
                                            )
 
         self.button_find_test_cases.place(x = 1100, y = 0, width=50)
+        
+        self.button_save_test_cases = tk.Button(master = self.query_frame, text = "Save",
+                                                command=self.controller.on_save_found_test_cases_click)
+
+        self.button_save_test_cases.place(x=1150, y=0, width=50)
 
     def get_query_tab_frame(self):
         return self.query_frame
