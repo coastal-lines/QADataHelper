@@ -14,3 +14,12 @@ class StatisticsTabs:
 
         self.structure_tab = StructureOfTestCasesTab()
         self.result_tab_control.add(self.structure_tab.tree_result_frame, text='Structure of test cases')
+        
+        self.list_tab = ListOfTestCasesTab()
+        self.result_tab_control.add(self.list_tab.list_result_frame, text='List of test cases')
+
+        self.details_tab = DetailsTab()
+        self.result_tab_control.add(self.details_tab.details_frame, text='DetailsTab')
+
+        self.extended_details = ExtendedDetails()
+        self.result_tab_control.add(self.extended_details.extended_details_frame, text='Extended details')
