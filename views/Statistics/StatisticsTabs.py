@@ -23,3 +23,6 @@ class StatisticsTabs:
 
         self.extended_details = ExtendedDetails()
         self.result_tab_control.add(self.extended_details.extended_details_frame, text='Extended details')
+        
+    def update_list_tab(self, test_cases):
+        self.list_tab.update_list_test_cases(test_cases)
