@@ -5,6 +5,9 @@ class ListOfTestCasesTab:
     def __init__(self):
         self.list_result_frame = tk.Frame()
         
+        v = tk.Scrollbar(self.list_result_frame)
+        v.pack(side=tk.RIGHT, fill=tk.Y)
+        
         self.text_for_list_result = tk.Text(self.list_result_frame, height=1, borderwidth=0, yscrollcommand = v.set, wrap = tk.NONE)
         self.text_for_list_result.place(x=0, y=0, width=1180, height=630)
 
