@@ -25,7 +25,8 @@ class StepsCanvas(Visualization, HtmlHelper):
 
         expected_list = self.get_str_list_from_html(expecteds)
 
-        print(expected_list)
+        #TODO - debug, remove after release
+        #print(expected_list)
         number_lines_of_steps = (len(input_list) + len(expected_list)) // 2
 
         steps_fig, steps_ax = plt.subplots()
