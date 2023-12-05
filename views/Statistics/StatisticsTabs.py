@@ -26,9 +26,12 @@ class StatisticsTabs:
         
     def update_structure_tab(self, test_cases):
         self.structure_tab.update_structure_of_test_cases(test_cases)
+
+    def update_list_tab(self, test_cases):
+        self.list_tab.update_list_test_cases(test_cases)
         
     def update_details(self, test_cases):
         self.details_tab.update(test_cases)
         
-    def update_list_tab(self, test_cases):
-        self.list_tab.update_list_test_cases(test_cases)
+    def update_statistics(self, prepared_data, number_all_test_cases):
+        self.extended_details.update_statistics(prepared_data, number_all_test_cases)
