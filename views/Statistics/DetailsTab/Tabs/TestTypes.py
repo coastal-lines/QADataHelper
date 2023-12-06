@@ -6,7 +6,6 @@ from utils.VisualizationHelper import Visualization
 class TestTypesTab(Visualization):
 
     def update_test_types(self, details_frame, test_cases):
-
         test_types = ConfigReader().get_parameters("TESTTYPES")
 
         test_types_dict = dict()
