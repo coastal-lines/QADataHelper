@@ -8,6 +8,9 @@ class ExtendedDetails(Visualization):
         self.extended_details_frame = tk.Frame()
         self.extended_details_frame.place()
         
+        self.queries = []
+        self.canvas = None
+        
         self.x = 0
         self.y = 0
 
