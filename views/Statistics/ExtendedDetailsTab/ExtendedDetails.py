@@ -8,7 +8,8 @@ class ExtendedDetails(Visualization):
         self.extended_details_frame = tk.Frame()
         self.extended_details_frame.place()
         
-        self.queries = []
+        #TODO - double check this list. Remove is not necessary
+        #self.queries = []
         self.canvas = None
         
         self.font = ("DejaVu Sans", 8)
@@ -82,3 +83,16 @@ class ExtendedDetails(Visualization):
         label_number_steps.place(x=145, y=280, width=80)
         label_number_steps_value = tk.Label(master=frame, bg=self.background_color, anchor=self.anchor, font=self.font, text=data.number_steps)
         label_number_steps_value.place(x=225, y=280, width=60)
+        
+    def _create_frame(self):
+        frame = tk.Frame(self.extended_details_frame, highlightbackground="black", highlightthickness=1)
+        frame.place(x=self.x, y=self.y, width=400, height=300)
+
+        return frame
+        
+    def _create_windows(self, frame):
+        self.canvas.create_window(self.x, self.y, width=390, height=300, window=frame)
+        self.x += 390
+        if (self.x > 1130):
+            self.y += 300
+            self.x = 0
