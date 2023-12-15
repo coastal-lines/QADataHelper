@@ -96,3 +96,8 @@ class ExtendedDetails(Visualization):
         if (self.x > 1130):
             self.y += 300
             self.x = 0
+            
+    def _pack_figure(self, figure, frame):
+        figure_canvas = FigureCanvasTkAgg(figure, master=frame)
+        figure_canvas.draw()
+        figure_canvas.get_tk_widget().place(x=0, y=0)
