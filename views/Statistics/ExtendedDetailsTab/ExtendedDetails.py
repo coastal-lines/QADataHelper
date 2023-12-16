@@ -101,3 +101,16 @@ class ExtendedDetails(Visualization):
         figure_canvas = FigureCanvasTkAgg(figure, master=frame)
         figure_canvas.draw()
         figure_canvas.get_tk_widget().place(x=0, y=0)
+        
+    def update_screen(self, prepared_data, number_all_test_cases):
+        self._remove_all_already_existed_widgets()
+        self._create_canvas()
+
+        for data in prepared_data:
+            frame = self._create_frame()
+            steps_fig = self._create_figure_and_axes(data, number_all_test_cases)
+            self._pack_figure(steps_fig, frame)
+            self._create_additional_elements_for_each_frame(frame, data)
+            self._create_windows(frame)
+
+        self.canvas.configure(scrollregio=self.canvas.bbox("all"))
