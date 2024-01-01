@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
 from utils.VisualizationHelper import Visualization
 
+
 class SuccessCanvas(Visualization):
     def update_success(self, details_frame, test_cases):
 

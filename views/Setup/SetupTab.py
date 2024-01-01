@@ -80,8 +80,8 @@ class SetupTab:
         def get_project_for_test_cases(self):
             return self.project_text.get()
             
-            def get_project_for_folders(self):
-        return self.project_text_folders.get()
+        def get_project_for_folders(self):
+            return self.project_text_folders.get()
 
         def get_root_folder(self):
             return self.root_folder_text.get()
