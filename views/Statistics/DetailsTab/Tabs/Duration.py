@@ -6,7 +6,7 @@ from utils.VisualizationHelper import Visualization
 class DurationCanvas(Visualization):
 
     def update_duration(self, details_frame, test_cases):
-        manual_time_duration, auto_time_duration = CalculationStatisticsForTestCaseFields().get_average_duration_for_test_case(test_cases)
+        manual_time_duration, auto_time_duration = CalculationStatisticsForTestCaseFields().get_average_duration_for_test_cases(test_cases)
 
         duration_fig3, duration_ax3 = plt.subplots()
         duration_ax3.set_title('Duration')

@@ -18,7 +18,7 @@ class View(tk.Tk):
     login = None
     password = None
 
-    def __init__(self, controller):
+    def __init__(self, controller, view_mode=None):
         super().__init__()
 
         self.geometry("1200x725")
@@ -26,7 +26,7 @@ class View(tk.Tk):
 
         self._private_make_tab_control()
 
-        self.setup_tab = SetupTab(controller)
+        self.setup_tab = SetupTab(controller, view_mode)
         self.tabControl.add(self.setup_tab.get_setup_tab_frame(), text='Setup')
 
         self.query_tab = QueryTab(controller)
@@ -38,11 +38,11 @@ class View(tk.Tk):
         #endles loop for wait any user interactions - will works during window is opened
         self.mainloop()
         
-	#create container for tabs
+    #create container for tabs
     def _private_make_tab_control(self):
         self.tabControl = ttk.Notebook(self)
         self.tabControl.place(x = 0, y = 0, width = 1200, height = 730)
-        
+
     def get_credits(self):
         return ConverterBase64().convert_into_base64(self.login.get() + ":" + self.password.get())
         

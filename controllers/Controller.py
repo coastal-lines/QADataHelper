@@ -6,8 +6,8 @@ from utils.FileHelper import FileHelper
 
 class Controller():
 
-    def __init__(self):
-        self.view = View(self)
+    def __init__(self, view_mode=None):
+        self.view = View(self, view_mode)
         self.model = Model(self.view.get_server_instance())
         self.rootFolder = None
         self.test_cases = None
