@@ -11,8 +11,7 @@ class Model:
         self.server = server
         self.list_test_cases = []
 
-        #self.test_case_fields = ConfigReader().get_test_case_fields_from_config()
-        self.test_case_fields = None
+        self.test_case_fields = ConfigReader().get_test_case_fields_from_config()
         self.file_helper = FileHelper()
         self.tc_helper = ParsingTestCaseFields(self.server, self.test_case_fields)
 
@@ -79,7 +78,7 @@ class Model:
         for attr_number in range(len(self.test_case_fields)):
             self.tc_helper.apply_custom_field_for_test_case(service, current_tc, test_case, attr_number, credits, rootForTestCases, rootForFolders)
 
-            #if field equesl None set empty string
+            # If field equals None set empty string
             if(current_tc.__getattribute__(self.test_case_fields[attr_number]) == None):
                 current_tc.__setattr__(self.test_case_fields[attr_number], "")
 

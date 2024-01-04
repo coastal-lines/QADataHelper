@@ -1,3 +1,5 @@
+import json
+
 from models.Model import Model
 from views.View import View
 from service_components.ServiceFolder import ServiceFolder
@@ -41,11 +43,12 @@ class Controller():
                                                         rootForFolders)
 
         self.file_helper.save_test_cases_into_file(test_cases)
-       
+
     def on_upload_all_test_cases_click(self):
         self.test_cases = self.model.upload_all_test_cases(self.file_helper.call_file_open_dialog())
         self.view.set_upload_mode()
         self.view.update_view(self.test_cases)
+        self.view.switch_active_tab(1)
         
     def on_find_test_cases_click(self, user_query_text):
         self.model.clear_list_test_cases()

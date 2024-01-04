@@ -29,7 +29,7 @@ class View(tk.Tk):
         self.setup_tab = SetupTab(controller, view_mode)
         self.tabControl.add(self.setup_tab.get_setup_tab_frame(), text='Setup')
 
-        self.query_tab = QueryTab(controller)
+        self.query_tab = QueryTab(controller, view_mode)
         self.tabControl.add(self.query_tab.get_query_tab_frame(), text='Query')
 
         self.statistics_tabs = StatisticsTabs(self.query_tab.get_query_tab_frame())
@@ -67,7 +67,7 @@ class View(tk.Tk):
         self.statistics_tabs.update_list_tab(test_cases)
         self.statistics_tabs.update_structure_tab(test_cases)
         self.statistics_tabs.update_details(test_cases)
-        
+
     def update_view_extended_details(self, prepared_data, number_all_test_cases):
         self.statistics_tabs.update_extended_details(prepared_data, number_all_test_cases)
         
@@ -80,3 +80,6 @@ class View(tk.Tk):
         html_base = "<html><body><h3>No results</h3><ul id='main'></ul></html>"
         html_document = BeautifulSoup(html_base, 'html.parser')
         self.statistics_tabs.structure_tab.html_frame.load_html(str(html_document.contents[0]))
+
+    def switch_active_tab(self, tab_index: int):
+        self.tabControl.select(tab_index)

@@ -1,7 +1,7 @@
 import tkinter as tk
 
 class QueryTab:
-    def __init__(self, controller):
+    def __init__(self, controller, view_mode=None):
         self.query_frame = tk.Frame()
         self.query_frame.pack()
 
@@ -35,6 +35,10 @@ class QueryTab:
                                            )
 
         self.button_find_extended_test_cases.place(x = 1100, y = 25, width=100, height=25)
+
+        if view_mode == "demo":
+            self.query_text.insert(0, 'Name CONTAINS "exam" AND Name CONTAINS "math"')
+            self.query_text.config(state="disabled")
 
     def get_query_tab_frame(self):
         return self.query_frame
