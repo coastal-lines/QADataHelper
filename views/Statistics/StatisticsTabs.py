@@ -6,6 +6,7 @@ from views.Statistics.StructureTab.Structure import StructureOfTestCasesTab
 from views.Statistics.DetailsTab.Details import DetailsTab
 from views.Statistics.ExtendedDetailsTab.ExtendedDetails import ExtendedDetails
 
+
 class StatisticsTabs:
     def __init__(self, query_frame):
 
@@ -34,7 +35,7 @@ class StatisticsTabs:
         
     def update_details(self, test_cases):
         self.details_tab.update(test_cases)
-    
+
     def update_extended_details(self, prepared_data, number_all_test_cases):
         prepared_queries = DataFormatter().prepare_user_queries_for_statistics(prepared_data, number_all_test_cases)
         self.extended_details.update_screen(prepared_queries, number_all_test_cases)

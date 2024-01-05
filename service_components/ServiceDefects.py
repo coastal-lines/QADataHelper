@@ -34,6 +34,13 @@ class ServiceDefects:
                     self.__total_number_severity_p5 += 1
                     continue
 
+    def set_severities_manually(self, p1: int, p2: int, p3: int, p4: int, p5: int):
+        self.__total_number_severity_p1 = p1
+        self.__total_number_severity_p2 = p2
+        self.__total_number_severity_p3 = p3
+        self.__total_number_severity_p4 = p4
+        self.__total_number_severity_p5 = p5
+
     def get_severities(self):
         return (self.__total_number_severity_p1,
                 self.__total_number_severity_p2,
