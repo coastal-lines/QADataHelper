@@ -72,7 +72,6 @@ class Controller():
             else:
                 #update test cases list
                 self.view.update_view(test_cases)
-
                 self.view.update_view_extended_details(data_for_charts, len(self.model.get_test_cases()))
                 
     def on_save_found_test_cases_click(self):

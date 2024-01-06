@@ -1,4 +1,6 @@
 import re
+from typing import Tuple
+
 
 class UserQueryObject:
     def __init__(self, original_query, where, condition, text):
@@ -31,6 +33,11 @@ class QueryFormatter:
 
         return combined_queries
 
+    def __remove_extra_bracket(self, phrase: str, word: str) -> Tuple[str, str]:
+        word = word.replace("(", "")
+        phrase = phrase.replace("(", "")
+        return phrase, word
+
     def split_raw_query_by_logical_operator(self, raw_query):
         combined_queries = self.split_raw_query_into_combined_queries(raw_query)
 
@@ -43,10 +50,16 @@ class QueryFormatter:
 
                 for query in list_queries:
                     w, c, t = self._split_each_query(query)
+                    if (w[0] == "("):
+                        combined_query, w = self.__remove_extra_bracket(combined_query, w)
+
                     user_query = UserQueryObject(query, w, c, t)
                     user_queries[-1].add_query(user_query)
             else:
                 w, c, t = self._split_each_query(combined_query)
+                if (w[0] == "("):
+                    combined_query, w = self.__remove_extra_bracket(combined_query, w)
+
                 user_query = UserQueryObject(combined_query, w, c, t)
                 user_queries[-1].add_query(user_query)
 

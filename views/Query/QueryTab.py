@@ -1,5 +1,6 @@
 import tkinter as tk
 
+
 class QueryTab:
     def __init__(self, controller, view_mode=None):
         self.query_frame = tk.Frame()
@@ -39,6 +40,8 @@ class QueryTab:
         if view_mode == "demo":
             self.query_text.insert(0, 'Name CONTAINS "exam" AND Name CONTAINS "math"')
             self.query_text.config(state="disabled")
+
+            self.query_extended_text.insert(0, '((Name CONTAINS "History") OR (Name CONTAINS "1879")) OR (Name CONTAINS "2356")')
 
     def get_query_tab_frame(self):
         return self.query_frame
