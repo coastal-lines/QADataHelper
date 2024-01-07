@@ -1,7 +1,7 @@
 import json
 
 from models.Model import Model
-from views.View import View
+from views.view import View
 from service_components.ServiceFolder import ServiceFolder
 from service_components.ServiceInstance import ServiceInstance
 from utils.FileHelper import FileHelper

@@ -1,9 +1,9 @@
 from tkinter import ttk
 
 from utils.Statistics.DataFormatter import DataFormatter
-from views.Statistics.ListTab.List import ListOfTestCasesTab
-from views.Statistics.StructureTab.Structure import StructureOfTestCasesTab
-from views.Statistics.DetailsTab.Details import DetailsTab
+from views.Statistics.ListTab.list_of_test_cases_tab import ListOfTestCasesTab
+from views.Statistics.StructureTab.structure_of_test_cases_tab import StructureOfTestCasesTab
+from views.Statistics.DetailsTab.details_tab import DetailsTab
 from views.Statistics.ExtendedDetailsTab.ExtendedDetails import ExtendedDetails
 
 

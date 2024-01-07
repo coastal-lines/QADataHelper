@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from bs4 import BeautifulSoup
 
-from views.Statistics.StatisticsTabs import StatisticsTabs
+from views.Statistics.statistics_tabs import StatisticsTabs
 from views.Setup.SetupTab import SetupTab
 from views.Query.QueryTab import QueryTab
 from utils.ConverterBase64 import ConverterBase64

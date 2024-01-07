@@ -1,11 +1,11 @@
 import tkinter as tk
 
-from views.Statistics.DetailsTab.Tabs.Success import SuccessCanvas
-from views.Statistics.DetailsTab.Tabs.Defects import DefectsCanvas
-from views.Statistics.DetailsTab.Tabs.Duration import DurationCanvas
-from views.Statistics.DetailsTab.Tabs.Steps import StepsCanvas
-from views.Statistics.DetailsTab.Tabs.ManualAndAuto import ManualAutoTab
-from views.Statistics.DetailsTab.Tabs.TestTypes import TestTypesTab
+from views.Statistics.DetailsTab.Tabs.success_canvas import SuccessCanvas
+from views.Statistics.DetailsTab.Tabs.defects_canvas import DefectsCanvas
+from views.Statistics.DetailsTab.Tabs.duration_canvas import DurationCanvas
+from views.Statistics.DetailsTab.Tabs.steps_canvas import StepsCanvas
+from views.Statistics.DetailsTab.Tabs.manual_and_auto_tab import ManualAutoTab
+from views.Statistics.DetailsTab.Tabs.test_types_tab import TestTypesTab
 
 class DetailsTab:
     def __init__(self):
