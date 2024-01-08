@@ -1,6 +1,8 @@
+from typing import List
+
 from models.CalculationStatisticsForTestCaseFields import CalculationStatisticsForTestCaseFields
 
-class _UserQueryData:
+class UserQueryData:
     def __init__(self):
         self.query = None
         self.number_tc = None
@@ -13,12 +15,12 @@ class _UserQueryData:
         self.average_number_lines_of_steps = None
 
 class DataFormatter:
-    def prepare_user_queries_for_statistics(self, combined_queries, number_all_test_cases):
+    def prepare_user_queries_for_statistics(self, combined_queries, number_all_test_cases) -> List[UserQueryData]:
         prepared_data = []
 
         for queries in combined_queries:
             for data in queries[1].get_queries():
-                temp = _UserQueryData()
+                temp = UserQueryData()
                 temp.query = data.original_query
                 temp.number_tc = len(queries[0])
                 temp.number_other_tc = str(int(number_all_test_cases) - len(queries[0]))

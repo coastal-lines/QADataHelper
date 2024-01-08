@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 
-from utils.TestCaseUtils.HtmlHelper import HtmlHelper
-from utils.VisualizationHelper import Visualization
+from utils.TestCaseUtils.html_helper import HtmlHelper
+from utils.visualization_helper import VisualizationHelper
 
-class StepsCanvas(Visualization, HtmlHelper):
+class StepsCanvas(VisualizationHelper, HtmlHelper):
 
     def update_steps(self, details_frame, test_cases):
         number_steps = []

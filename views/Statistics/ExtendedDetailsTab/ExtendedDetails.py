@@ -1,9 +1,9 @@
 import tkinter as tk
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg)
-from utils.VisualizationHelper import Visualization
+from utils.visualization_helper import VisualizationHelper
 
-class ExtendedDetails(Visualization):
+class ExtendedDetails(VisualizationHelper):
     def __init__(self):
         self.extended_details_frame = tk.Frame()
         self.extended_details_frame.place()

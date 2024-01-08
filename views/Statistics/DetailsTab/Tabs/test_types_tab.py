@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
-from utils.ConfigReader import ConfigReader
-from utils.VisualizationHelper import Visualization
+from utils.config_reader import ConfigReader
+from utils.visualization_helper import VisualizationHelper
 
-class TestTypesTab(Visualization):
+class TestTypesTab(VisualizationHelper):
 
     def update_test_types(self, details_frame, test_cases):
         test_types = ConfigReader().get_parameters("TESTTYPES")

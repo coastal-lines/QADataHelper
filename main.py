@@ -1,5 +1,5 @@
 import argparse
-from controllers.Controller import Controller
+from controllers.controller import Controller
 
 
 def parse_arguments():

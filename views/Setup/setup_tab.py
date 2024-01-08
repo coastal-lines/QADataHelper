@@ -1,5 +1,5 @@
 import tkinter as tk
-from utils.ConverterBase64 import ConverterBase64
+from utils.converter_base64 import ConverterBase64
 
 class SetupTab:
     def __init__(self, controller, view_mode=None):

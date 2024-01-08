@@ -1,9 +1,9 @@
 from models.Query import QueryFormatter, UserQueryObject
 from models.ParsingTestCaseFields import ParsingTestCaseFields
-from service_components.ServiceTestCase import ServiceTestCase
-from utils.ConfigReader import ConfigReader
-from utils.FileHelper import FileHelper
-from utils.TestCaseUtils.ServiceHelper import ApiServiceHelper
+from service_components.service_test_case import ServiceTestCase
+from utils.config_reader import ConfigReader
+from utils.file_helper import FileHelper
+from utils.TestCaseUtils.api_service_helper import ApiServiceHelper
 from time import sleep
 
 class Model:

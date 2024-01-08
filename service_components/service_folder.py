@@ -1,4 +1,4 @@
-from utils.TestCaseUtils.ServiceHelper import ApiServiceHelper
+from utils.TestCaseUtils.api_service_helper import ApiServiceHelper
 
 class ServiceFolder():
     def __init__(self, service, query):

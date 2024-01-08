@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
-from utils.VisualizationHelper import Visualization
+from utils.visualization_helper import VisualizationHelper
 
-class ManualAutoTab(Visualization):
+class ManualAutoTab(VisualizationHelper):
 
     def update_manual_auto(self, details_frame, test_cases):
         plt.rcParams['font.size'] = 10

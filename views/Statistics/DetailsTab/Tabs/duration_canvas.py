@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 
 from models.CalculationStatisticsForTestCaseFields import CalculationStatisticsForTestCaseFields
-from utils.VisualizationHelper import Visualization
+from utils.visualization_helper import VisualizationHelper
 
-class DurationCanvas(Visualization):
+class DurationCanvas(VisualizationHelper):
 
     def update_duration(self, details_frame, test_cases):
         manual_time_duration, auto_time_duration = CalculationStatisticsForTestCaseFields().get_average_duration_for_test_cases(test_cases)

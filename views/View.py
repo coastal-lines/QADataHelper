@@ -3,9 +3,9 @@ from tkinter import ttk
 from bs4 import BeautifulSoup
 
 from views.Statistics.statistics_tabs import StatisticsTabs
-from views.Setup.SetupTab import SetupTab
-from views.Query.QueryTab import QueryTab
-from utils.ConverterBase64 import ConverterBase64
+from views.Setup.setup_tab import SetupTab
+from views.Query.query_tab import QueryTab
+from utils.converter_base64 import ConverterBase64
 
 
 class View(tk.Tk):

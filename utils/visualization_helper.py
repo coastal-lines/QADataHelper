@@ -1,7 +1,7 @@
 import tkinter as tk
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg)
 
-class Visualization:
+class VisualizationHelper:
 
     def create_canvas(self, parent_frame, figure, x, y):
         figure.set_size_inches(4.0, 3.2)

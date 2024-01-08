@@ -2,9 +2,9 @@ import json
 
 from models.Model import Model
 from views.view import View
-from service_components.ServiceFolder import ServiceFolder
-from service_components.ServiceInstance import ServiceInstance
-from utils.FileHelper import FileHelper
+from service_components.service_folder import ServiceFolder
+from service_components.service_instance import ServiceInstance
+from utils.file_helper import FileHelper
 
 class Controller():
 

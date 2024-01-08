@@ -1,6 +1,6 @@
-from service_components.ServiceDefects import ServiceDefects
-from utils.TestCaseUtils.RestHelper import RestApi
-from utils.TestCaseUtils.ServiceHelper import ApiServiceHelper
+from service_components.service_defects import ServiceDefects
+from utils.TestCaseUtils.rest_api_helper import RestApiHelper
+from utils.TestCaseUtils.api_service_helper import ApiServiceHelper
 
 class ParsingTestCaseFields:
 
@@ -8,7 +8,7 @@ class ParsingTestCaseFields:
         self.server = server
         self.test_case_fields = test_case_fields
 
-        self.api = RestApi(self.server)
+        self.api = RestApiHelper(self.server)
 
         self.__previous_test_case_folder_name = None
         self.__previous_parents = None

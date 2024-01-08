@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
-from utils.VisualizationHelper import Visualization
+from utils.visualization_helper import VisualizationHelper
 
 
-class SuccessCanvas(Visualization):
+class SuccessCanvas(VisualizationHelper):
     def update_success(self, details_frame, test_cases):
 
         number_passed_tc = 0
