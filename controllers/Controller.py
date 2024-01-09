@@ -1,33 +1,31 @@
-import json
-
 from models.Model import Model
+from utils import file_helper
 from views.view import View
 from service_components.service_folder import ServiceFolder
 from service_components.service_instance import ServiceInstance
-from utils.file_helper import FileHelper
+
 
 class Controller():
-
-    def __init__(self, view_mode=None):
+    def __init__(self, view_mode: str = None):
         self.view = View(self, view_mode)
         self.model = Model(self.view.get_server_instance())
-        self.rootFolder = None
-        self.test_cases = None
 
-        self.file_helper = FileHelper()
+        self.service = None
+        self.root_folder = None
+        self.test_cases = None
 
     def main(self):
         self.view.main()
 
-    def on_start_session_click(self, server, user, password, workspace, project, root_folder):
+    def on_start_session_click(self, server: str, user: str, password: str, workspace: str, project: str, root_folder: str):
         try:
-            self.service = ServiceInstance(server, user, password).service
-            self.service.setWorkspace(workspace)
-            self.service.setProject(project)
+            self.service = ServiceInstance(server, user, password)
+            self.service.set_workspace(workspace)
+            self.service.set_project(project)
 
             if(root_folder != ""):
-                self.rootFolder = ServiceFolder(self.service, 'FormattedID = "' + root_folder + '"').testFolder
-                self.root_folder_formatted_id = root_folder
+                self.root_folder = ServiceFolder(self.service, root_folder)
+                self.root_folder_formatted_id = self.root_folder.get_test_folder()
 
             print("Session starts")
 
@@ -36,16 +34,16 @@ class Controller():
             print("Communication error")
             
     def on_download_all_test_cases_click(self, credits, rootForTestCases, rootForFolders):
-        test_cases = self.model.download_all_test_cases(self.rootFolder,
+        test_cases = self.model.download_all_test_cases(self.root_folder,
                                                         self.service,
                                                         credits,
                                                         rootForTestCases,
                                                         rootForFolders)
 
-        self.file_helper.save_test_cases_into_file(test_cases)
+        file_helper.save_test_cases_into_file(test_cases)
 
     def on_upload_all_test_cases_click(self):
-        self.test_cases = self.model.upload_all_test_cases(self.file_helper.call_file_open_dialog())
+        self.test_cases = self.model.upload_all_test_cases(file_helper.call_file_open_dialog())
         self.view.set_upload_mode()
         self.view.update_view(self.test_cases)
         self.view.switch_active_tab(1)
@@ -54,7 +52,6 @@ class Controller():
         self.model.clear_list_test_cases()
         self.view.unlock_save_test_cases_button()
         self.test_cases = self.model.run_query(self.service,
-                                               self.rootFolder,
                                                self.view.setup_tab.get_credits(),
                                                user_query_text,
                                                self.view.setup_tab.get_project_for_test_cases(),
@@ -75,4 +72,4 @@ class Controller():
                 self.view.update_view_extended_details(data_for_charts, len(self.model.get_test_cases()))
                 
     def on_save_found_test_cases_click(self):
-        self.file_helper.save_test_cases_into_file(self.test_cases)
+        file_helper.save_test_cases_into_file(self.test_cases)

@@ -41,7 +41,7 @@ class QueryTab:
             self.query_text.insert(0, 'Name CONTAINS "exam" AND Name CONTAINS "math"')
             self.query_text.config(state="disabled")
 
-            self.query_extended_text.insert(0, '((Name CONTAINS "History") OR (Name CONTAINS "1879")) OR (Name CONTAINS "2356")')
+            self.query_extended_text.insert(0, '(Inputs CONTAINS "every question") AND (Expecteds CONTAINS "excel") AND (Expecteds CONTAINS "preparation") AND (Tags CONTAINS "api") AND (Name != "History") AND (Name = "Exam in Computer Science (1849)")')
 
     def get_query_tab_frame(self):
         return self.query_frame

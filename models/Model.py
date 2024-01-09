@@ -1,8 +1,8 @@
-from models.Query import QueryFormatter, UserQueryObject
+from models.Query import QueryFormatter
 from models.ParsingTestCaseFields import ParsingTestCaseFields
 from service_components.service_test_case import ServiceTestCase
+from utils import file_helper, timer_utils
 from utils.config_reader import ConfigReader
-from utils.file_helper import FileHelper
 from utils.TestCaseUtils.api_service_helper import ApiServiceHelper
 from time import sleep
 
@@ -12,10 +12,9 @@ class Model:
         self.list_test_cases = []
 
         self.test_case_fields = ConfigReader().get_test_case_fields_from_config()
-        self.file_helper = FileHelper()
         self.tc_helper = ParsingTestCaseFields(self.server, self.test_case_fields)
 
-        self.query_formater = QueryFormatter()
+        self.query_formatter = QueryFormatter()
 
     def clear_list_test_cases(self):
         self.list_test_cases.clear()
@@ -28,12 +27,12 @@ class Model:
         result = None
         result_for_statistics_tab = []
 
-        self.list_combined_queries = self.query_formater.split_raw_query_by_logical_operator(query)
+        self.list_combined_queries = self.query_formatter.split_raw_query_by_logical_operator(query)
         for queries in self.list_combined_queries:
             temp_result = None
             result = []
             for user_query in queries.get_queries():
-                temp_result = self.query_formater._select_test_cases_by_query(self.list_test_cases, self.test_case_fields, user_query.where, user_query.text)
+                temp_result = self.query_formatter._select_test_cases_by_query(self.list_test_cases, self.test_case_fields, user_query.where, user_query.text)
                 result = self.extend_test_case_list(temp_result, result)
 
             result_for_statistics_tab.append((result, queries))
@@ -50,8 +49,10 @@ class Model:
 
         return parent_list
         
-    def run_query(self, service, rootFolder, credits, user_query_text, rootForTestCases, rootForFolders):
-        # get response with User's query
+    def run_query(self, service, credits, user_query_text, rootForTestCases, rootForFolders):
+        """
+            Get response with User's query
+        """
         testCasesFromUserQuery = ApiServiceHelper().get_test_case(service, user_query_text)
 
         for number in range(testCasesFromUserQuery.resultCount):
@@ -59,16 +60,15 @@ class Model:
             tcObject = self._init_test_case_as_object(tc, service, credits, rootForTestCases, rootForFolders)
             self.list_test_cases.append(tcObject)
 
-            #TODO - debug
-            print(len(self.list_test_cases))
-            if((len(self.list_test_cases) / 500).is_integer()):
-                print("sleep")
-                sleep(91)
+            """
+                Service blocks client if user sent many responses.              
+            """
+            timer_utils.check_number_response_and_wait(self.list_test_cases)
 
         return self.list_test_cases
         
     def upload_all_test_cases(self, file_path):
-        self.list_test_cases = self.file_helper.load_files(file_path)
+        self.list_test_cases = file_helper.deserialization_data(file_path)
         return self.list_test_cases
         
     #AREA OF HELPFUL METHODS
@@ -99,6 +99,7 @@ class Model:
         return self.list_test_cases
         
     _folder_list = []
+
     def _extract_test_cases_from_folder(self, folder, credits, service, rootForTestCases, rootForFolders):
         self._folder_list.append(folder.Name)
 
@@ -106,13 +107,8 @@ class Model:
             for testCase in folder.TestCases:
                 tc = self._init_test_case_as_object(testCase, service, credits, rootForTestCases, rootForFolders)
                 self.list_test_cases.append(tc)
-                #print(tc.__getattribute__("Parents"))
 
-                # TODO - debug
-                print(len(self.list_test_cases))
-                if ((len(self.list_test_cases) / 500).is_integer()):
-                    print("sleep")
-                    sleep(91)
+                timer_utils.check_number_response_and_wait(self.list_test_cases)
 
         if len(folder.Children) > 0:
             self._extract_folders(folder.Children, credits, service, rootForTestCases, rootForFolders)

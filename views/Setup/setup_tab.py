@@ -1,5 +1,6 @@
 import tkinter as tk
-from utils.converter_base64 import ConverterBase64
+from utils.converter_base64 import convert_into_base64
+
 
 class SetupTab:
     def __init__(self, controller, view_mode=None):
@@ -108,4 +109,4 @@ class SetupTab:
 
     def get_credits(self):
         user_credits = self.login.get() + ":" + self.password.get()
-        return ConverterBase64().convert_into_base64(user_credits)
+        return convert_into_base64(user_credits)
