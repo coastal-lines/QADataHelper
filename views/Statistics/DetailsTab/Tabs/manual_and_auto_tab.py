@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
-from utils.visualization_helper import VisualizationHelper
+from utils import visualization_helper
 
-class ManualAutoTab(VisualizationHelper):
 
+class ManualAutoTab:
     def update_manual_auto(self, details_frame, test_cases):
         plt.rcParams['font.size'] = 10
 
@@ -21,4 +21,4 @@ class ManualAutoTab(VisualizationHelper):
         testing_method_ax.bar(['Auto'], [auto], color="lightsteelblue")
         testing_method_ax.set_title('Manual/Auto')
 
-        self.create_canvas(details_frame, testing_method_fig, 400, 300)
+        visualization_helper.create_canvas(details_frame, testing_method_fig, 400, 300)

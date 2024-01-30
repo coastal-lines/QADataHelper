@@ -1,9 +1,10 @@
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
-from utils.visualization_helper import VisualizationHelper
+
+from utils import visualization_helper
 
 
-class SuccessCanvas(VisualizationHelper):
+class SuccessCanvas:
     def update_success(self, details_frame, test_cases):
 
         number_passed_tc = 0
@@ -28,4 +29,4 @@ class SuccessCanvas(VisualizationHelper):
         plt.yticks(fontsize=8)
         success_fig.subplots_adjust(bottom=0.3)
 
-        self.create_canvas(details_frame, success_fig, 0, 0)
+        visualization_helper.create_canvas(details_frame, success_fig, 0, 0)

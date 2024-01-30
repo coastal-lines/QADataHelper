@@ -1,15 +1,13 @@
 import tkinter as tk
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg)
-from utils.visualization_helper import VisualizationHelper
 
-class ExtendedDetails(VisualizationHelper):
+
+class ExtendedDetails:
     def __init__(self):
         self.extended_details_frame = tk.Frame()
         self.extended_details_frame.place()
-        
-        #TODO - double check this list. Remove is not necessary
-        #self.queries = []
+
         self.canvas = None
         
         self.font = ("DejaVu Sans", 8)

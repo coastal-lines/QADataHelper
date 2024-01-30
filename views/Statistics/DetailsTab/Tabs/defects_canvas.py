@@ -2,10 +2,10 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
 
 from models.CalculationStatisticsForTestCaseFields import CalculationStatisticsForTestCaseFields
-from utils.visualization_helper import VisualizationHelper
+from utils import visualization_helper
 
 
-class DefectsCanvas(VisualizationHelper):
+class DefectsCanvas():
     def update_defects(self, details_frame, test_cases):
         number_defects = CalculationStatisticsForTestCaseFields().get_number_defects_for_test_cases(test_cases)
 
@@ -31,4 +31,4 @@ class DefectsCanvas(VisualizationHelper):
         if (number_defects == 0):
             defects_fig.text(0.5, 0.5, "No defects", ha="center", va="center", color="black", fontsize=32)
 
-        self.create_canvas(details_frame, defects_fig, 400, 0)
+        visualization_helper.create_canvas(details_frame, defects_fig, 400, 0)

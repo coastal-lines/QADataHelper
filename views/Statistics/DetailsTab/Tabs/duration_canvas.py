@@ -1,10 +1,10 @@
 import matplotlib.pyplot as plt
 
 from models.CalculationStatisticsForTestCaseFields import CalculationStatisticsForTestCaseFields
-from utils.visualization_helper import VisualizationHelper
+from utils import visualization_helper
 
-class DurationCanvas(VisualizationHelper):
 
+class DurationCanvas:
     def update_duration(self, details_frame, test_cases):
         manual_time_duration, auto_time_duration = CalculationStatisticsForTestCaseFields().get_average_duration_for_test_cases(test_cases)
 
@@ -20,4 +20,4 @@ class DurationCanvas(VisualizationHelper):
         plt.yticks(fontsize=8)
         duration_fig3.subplots_adjust(bottom=0.3)
 
-        self.create_canvas(details_frame, duration_fig3, 800, 0)
+        visualization_helper.create_canvas(details_frame, duration_fig3, 800, 0)

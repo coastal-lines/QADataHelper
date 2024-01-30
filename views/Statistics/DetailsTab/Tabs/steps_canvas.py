@@ -1,9 +1,10 @@
 import matplotlib.pyplot as plt
 
+from utils import visualization_helper
 from utils.TestCaseUtils.html_helper import HtmlHelper
-from utils.visualization_helper import VisualizationHelper
 
-class StepsCanvas(VisualizationHelper, HtmlHelper):
+
+class StepsCanvas(HtmlHelper):
 
     def update_steps(self, details_frame, test_cases):
         number_steps = []
@@ -24,9 +25,6 @@ class StepsCanvas(VisualizationHelper, HtmlHelper):
                 expecteds.append(expected)
 
         expected_list = self.get_str_list_from_html(expecteds)
-
-        #TODO - debug, remove after release
-        #print(expected_list)
         number_lines_of_steps = (len(input_list) + len(expected_list)) // 2
 
         steps_fig, steps_ax = plt.subplots()
@@ -35,4 +33,4 @@ class StepsCanvas(VisualizationHelper, HtmlHelper):
         steps_ax.set_title('Steps')
 
         plt.xticks(fontsize=8)
-        self.create_canvas(details_frame, steps_fig, 0, 300)
+        visualization_helper.create_canvas(details_frame, steps_fig, 0, 300)

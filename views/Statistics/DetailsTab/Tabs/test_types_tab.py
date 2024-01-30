@@ -1,9 +1,11 @@
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
-from utils.config_reader import ConfigReader
-from utils.visualization_helper import VisualizationHelper
 
-class TestTypesTab(VisualizationHelper):
+from utils import visualization_helper
+from utils.config_reader import ConfigReader
+
+
+class TestTypesTab():
 
     def update_test_types(self, details_frame, test_cases):
         test_types = ConfigReader().get_parameters("TESTTYPES")
@@ -27,4 +29,4 @@ class TestTypesTab(VisualizationHelper):
         for type in test_types_dict:
             test_type_ax.barh([type], [test_types_dict[type]], color="cornflowerblue", align='center', alpha=0.4)
 
-        self.create_canvas(details_frame, test_type_fig, 800, 300)
+        visualization_helper.create_canvas(details_frame, test_type_fig, 800, 300)
