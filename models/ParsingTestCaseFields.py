@@ -81,6 +81,7 @@ class ParsingTestCaseFields:
         defects = ServiceDefects()
         defects.set_total_number_defect(raw_defects_json_result)
         defects.set_severities(raw_defects_json_result)
+        defects.add_defects(raw_defects_json_result["Results"])
 
         return defects
         

@@ -1,4 +1,18 @@
+from service_components.service_defect import ServiceDefect
+
+
 class ServiceDefects:
+    '''
+    __total_number: int
+    __total_number_severity_p1: int
+    __total_number_severity_p2: int
+    __total_number_severity_p3: int
+    __total_number_severity_p4: int
+    __total_number_severity_p5: int
+    __created_at: int
+    __defects_list: list
+    '''
+
     def __init__(self):
         self.total_number = 0
         self.__total_number_severity_p1 = 0
@@ -6,6 +20,20 @@ class ServiceDefects:
         self.__total_number_severity_p3 = 0
         self.__total_number_severity_p4 = 0
         self.__total_number_severity_p5 = 0
+        self.__created_at = 0
+        self.__defects_list = []
+
+    def add_defects(self, defects):
+        for defect in defects:
+            self.__defects_list.append(
+                ServiceDefect(defect["CreationDate"].split("T")[0],
+                              defect["Severity"].split(" - ")[0]))
+
+    def set_defects_list(self, defects_list):
+        self.__defects_list = defects_list
+
+    def get_defects_list(self):
+        return self.__defects_list
 
     def set_total_number_defect(self, raw_json_defects):
         self.total_number = int(raw_json_defects["TotalResultCount"])

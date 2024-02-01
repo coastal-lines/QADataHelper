@@ -5,6 +5,7 @@ import pandas as pd
 from dateutil.relativedelta import relativedelta
 import seaborn as sns
 
+from utils import visualization_helper
 
 
 class DefectsTimeLine():
@@ -13,18 +14,6 @@ class DefectsTimeLine():
         self.defects_time_line_frame.place()
 
     def update_defects_full_timeline(self, test_cases):
-        '''
-        debug_tests = []
-        for i in range(0, 100):
-            temp_test_case = ServiceTestCase()
-            defects = ServiceDefects()
-
-            defects.defects_list = []
-            temp_test_case.__setattr__("DefectsInformation", defects)
-
-            debug_tests.append(ServiceTestCase)
-        '''
-
         sorted_defects_by_date = sorted([defect.get_defect() for tc in test_cases for defect in tc.DefectsInformation.get_defects_list()])
 
         start_date = pd.to_datetime(sorted_defects_by_date[0][0])
@@ -73,7 +62,7 @@ class DefectsTimeLine():
 
         _fig.autofmt_xdate()
 
-        self.create_full_tab_canvas(self.defects_time_line_frame, _fig, 12.0, 3.5, 0, 0)
+        visualization_helper.create_full_tab_canvas(self.defects_time_line_frame, _fig, 12.0, 3.5, 0, 0)
 
     def update_defects_three_months_timeline(self, test_cases):
         sorted_defects_by_date = sorted([defect.get_defect() for tc in test_cases for defect in tc.DefectsInformation.get_defects_list()])
@@ -116,5 +105,5 @@ class DefectsTimeLine():
 
         _fig.autofmt_xdate()
 
-        self.create_full_tab_canvas(self.defects_time_line_frame, _fig, 12.0, 2.7, 0, 353)
+        visualization_helper.create_full_tab_canvas(self.defects_time_line_frame, _fig, 12.0, 2.7, 0, 353)
 
