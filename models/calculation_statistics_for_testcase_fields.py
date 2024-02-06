@@ -1,6 +1,7 @@
 from utils.TestCaseUtils.html_helper import HtmlHelper
 import operator
 
+
 class CalculationStatisticsForTestCaseFields:
     def get_number_manual_and_auto_for_test_cases(self, test_cases):
         manual = 0

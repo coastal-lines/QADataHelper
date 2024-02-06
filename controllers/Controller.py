@@ -1,4 +1,4 @@
-from models.Model import Model
+from models.model import Model
 from utils import file_helper
 from views.view import View
 from service_components.service_folder import ServiceFolder

@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-from models.CalculationStatisticsForTestCaseFields import CalculationStatisticsForTestCaseFields
+from models.calculation_statistics_for_testcase_fields import CalculationStatisticsForTestCaseFields
 from utils import visualization_helper
 
 

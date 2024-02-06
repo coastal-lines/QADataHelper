@@ -1,10 +1,10 @@
-from models.Query import QueryFormatter
-from models.ParsingTestCaseFields import ParsingTestCaseFields
+from models.parsing_testcase_fields import ParsingTestCaseFields
+from models.queries.query_formatter import QueryFormatter
 from service_components.service_test_case import ServiceTestCase
 from utils import file_helper, timer_utils
 from utils.config_reader import ConfigReader
 from utils.TestCaseUtils.api_service_helper import ApiServiceHelper
-from time import sleep
+
 
 class Model:
     def __init__(self, server):

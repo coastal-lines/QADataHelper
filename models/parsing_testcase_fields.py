@@ -2,6 +2,7 @@ from service_components.service_defects import ServiceDefects
 from utils.TestCaseUtils.rest_api_helper import RestApiHelper
 from utils.TestCaseUtils.api_service_helper import ApiServiceHelper
 
+
 class ParsingTestCaseFields:
 
     def __init__(self, server, test_case_fields):
