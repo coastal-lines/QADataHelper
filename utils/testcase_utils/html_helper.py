@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import re
 
+
 class HtmlHelper:
 
     def __is_text_in_string(self, text, string):

@@ -1,10 +1,12 @@
 import matplotlib.pyplot as plt
 
 from utils import visualization_helper
-from utils.TestCaseUtils.html_helper import HtmlHelper
+from utils.testcase_utils.html_helper import HtmlHelper
 
 
-class StepsCanvas(HtmlHelper):
+class StepsCanvas():
+    def __init__(self):
+        self.html_helper = HtmlHelper()
 
     def update_steps(self, details_frame, test_cases):
         number_steps = []
@@ -17,14 +19,14 @@ class StepsCanvas(HtmlHelper):
             for input in tc.Inputs:
                 inputs.append(input)
 
-        input_list = self.get_str_list_from_html(inputs)
+        input_list = self.html_helper.get_str_list_from_html(inputs)
 
         expecteds = []
         for tc in test_cases:
             for expected in tc.Expecteds:
                 expecteds.append(expected)
 
-        expected_list = self.get_str_list_from_html(expecteds)
+        expected_list = self.html_helper.get_str_list_from_html(expecteds)
         number_lines_of_steps = (len(input_list) + len(expected_list)) // 2
 
         steps_fig, steps_ax = plt.subplots()

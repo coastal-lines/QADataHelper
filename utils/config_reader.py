@@ -1,5 +1,6 @@
 import configparser
 
+
 class ConfigReader:
 
     def get_parameters(self, parameter_name):

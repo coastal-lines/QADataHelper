@@ -1,5 +1,5 @@
-from utils.TestCaseUtils.html_helper import HtmlHelper
 import operator
+from utils.testcase_utils.html_helper import HtmlHelper
 
 
 class CalculationStatisticsForTestCaseFields:

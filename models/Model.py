@@ -3,7 +3,7 @@ from models.queries.query_formatter import QueryFormatter
 from service_components.service_test_case import ServiceTestCase
 from utils import file_helper, timer_utils
 from utils.config_reader import ConfigReader
-from utils.TestCaseUtils.api_service_helper import ApiServiceHelper
+from utils.testcase_utils.api_service_helper import ApiServiceHelper
 
 
 class Model:

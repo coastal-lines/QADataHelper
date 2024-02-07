@@ -1,6 +1,6 @@
 from typing import List
-
 from models.calculation_statistics_for_testcase_fields import CalculationStatisticsForTestCaseFields
+
 
 class UserQueryData:
     def __init__(self):

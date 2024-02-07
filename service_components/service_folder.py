@@ -1,5 +1,5 @@
 from service_components.service_instance import ServiceInstance
-from utils.TestCaseUtils.api_service_helper import ApiServiceHelper
+from utils.testcase_utils.api_service_helper import ApiServiceHelper
 
 
 class ServiceFolder():

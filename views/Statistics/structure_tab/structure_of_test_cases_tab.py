@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinterweb import HtmlFrame
 
-from utils.TestCaseUtils.html_helper import HtmlHelper
+from utils.testcase_utils.html_helper import HtmlHelper
 
 
 class StructureOfTestCasesTab:

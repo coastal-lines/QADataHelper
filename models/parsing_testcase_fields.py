@@ -1,6 +1,6 @@
 from service_components.service_defects import ServiceDefects
-from utils.TestCaseUtils.rest_api_helper import RestApiHelper
-from utils.TestCaseUtils.api_service_helper import ApiServiceHelper
+from utils.testcase_utils.api_service_helper import ApiServiceHelper
+from utils.testcase_utils.rest_api_helper import RestApiHelper
 
 
 class ParsingTestCaseFields:

@@ -1,11 +1,11 @@
 from tkinter import ttk
 
-from utils.Statistics.data_formatter import DataFormatter
-from views.Statistics.DefectsTimeLineTab.DefectsTimeLine import DefectsTimeLine
-from views.Statistics.ListTab.list_of_test_cases_tab import ListOfTestCasesTab
-from views.Statistics.StructureTab.structure_of_test_cases_tab import StructureOfTestCasesTab
-from views.Statistics.DetailsTab.details_tab import DetailsTab
-from views.Statistics.ExtendedDetailsTab.ExtendedDetails import ExtendedDetails
+from utils.statistics.data_formatter import DataFormatter
+from views.statistics.defects_timeline_tab.defects_timeline import DefectsTimeLine
+from views.statistics.details_tab.details_tab import DetailsTab
+from views.statistics.extended_details_tab.extended_details import ExtendedDetails
+from views.statistics.list_tab.list_of_test_cases_tab import ListOfTestCasesTab
+from views.statistics.structure_tab.structure_of_test_cases_tab import StructureOfTestCasesTab
 
 
 class StatisticsTabs:

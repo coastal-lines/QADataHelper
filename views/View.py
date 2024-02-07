@@ -2,9 +2,9 @@ import tkinter as tk
 from tkinter import ttk
 from bs4 import BeautifulSoup
 
-from views.Statistics.statistics_tabs import StatisticsTabs
-from views.Setup.setup_tab import SetupTab
-from views.Query.query_tab import QueryTab
+from views.statistics.statistics_tabs import StatisticsTabs
+from views.setup.setup_tab import SetupTab
+from views.query.query_tab import QueryTab
 from utils.converter_base64 import convert_into_base64
 
 

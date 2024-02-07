@@ -1,6 +1,7 @@
 import json
 import requests
 
+
 class RestApiHelper:
 
     def __init__(self, server):
