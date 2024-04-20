@@ -1,0 +1,2 @@
+class ServiceTestCase():
+    pass
