@@ -5,7 +5,7 @@
 <p class="has-line-data" data-line-start="6" data-line-end="7"><img src="https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/main_scr.jpg?raw=true" alt="image"></p>
 <h1 class="code-line" data-line-start="8" data-line-end="9"><a id="_8"></a></h1>
 <h4 class="code-line" data-line-start="11" data-line-end="12"><a id="Description_11"></a>Description</h4>
-<h5 class="code-line" data-line-start="12" data-line-end="13"><a id="The_tool_helps_in_planning_testing_estimating_tasks_optimizing_the_set_of_test_cases_and_much_more_12"></a>The tool helps in planning testing, estimating tasks, optimizing the set of test cases, and much more</h5>
+<p class="code-line" data-line-start="12" data-line-end="13"><a id="The_tool_helps_in_planning_testing_estimating_tasks_optimizing_the_set_of_test_cases_and_much_more_12"></a>The tool helps in planning testing, estimating tasks, optimizing the set of test cases, and much more</p>
 <h1 class="code-line" data-line-start="14" data-line-end="15"><a id="_14"></a></h1>
 <h4 class="code-line" data-line-start="19" data-line-end="20"><a id="Features_19"></a>Features</h4>
 <ul>
@@ -25,13 +25,13 @@
 <ul>
 <li class="has-line-data" data-line-start="24" data-line-end="25">View the structure of test cases as a tree instead of non-informative sheet</li>
 <li class="has-line-data" data-line-start="25" data-line-end="26">Simple way to copy filtered test list into feature, test report, etc</li>
+</ul>
 <p>
 <details>
   <summary>screenshot</summary>
 
   ![structures_scr](https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/structures_scr.jpg)
 </details>
-</ul>
 </li>
 <li class="has-line-data" data-line-start="26" data-line-end="33">Data visualization
 <ul>
@@ -41,37 +41,37 @@
 <li class="has-line-data" data-line-start="30" data-line-end="31">Number of test steps and average number of text lines in steps</li>
 <li class="has-line-data" data-line-start="31" data-line-end="32">Ratio of manual to automated test cases</li>
 <li class="has-line-data" data-line-start="32" data-line-end="33">Display of the number of test cases for each type</li>
+</ul>
 <p>
 <details>
   <summary>screenshot</summary>
 
   ![details_scr](https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/details_scr.jpg)
 </details>
-</ul>
 </li>
 <li class="has-line-data" data-line-start="33" data-line-end="36">Defect chart for a set of test cases
 <ul>
 <li class="has-line-data" data-line-start="34" data-line-end="35">For the entire period from the earliest defect to the latest</li>
 <li class="has-line-data" data-line-start="35" data-line-end="36">For a three-month period (depending on the project’s release frequency)</li>
+</ul>
 <p>
 <details>
   <summary>screenshot</summary>
 
   ![timeline_scr](https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/timeline_scr.jpg)
 </details>
-</ul>
 </li>
 <li class="has-line-data" data-line-start="36" data-line-end="39">Advanced search and visualization of statistics for selective parameters
 <ul>
 <li class="has-line-data" data-line-start="37" data-line-end="38">Ratio of selective test cases to the total number of cases</li>
 <li class="has-line-data" data-line-start="38" data-line-end="39">Output of brief statistics for each selective set</li>
+</ul>
 <p>
 <details>
   <summary>screenshot</summary>
 
   ![ext_details_scr](https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/ext_details_scr.jpg)
 </details>
-</ul>
 </li>
 <li class="has-line-data" data-line-start="39" data-line-end="41">The ability to work with data in offline</li>
 </ul>
@@ -206,4 +206,3 @@ main.py -viewmode demo
 </ul>
 </li>
 </ul>
-</body></html>
