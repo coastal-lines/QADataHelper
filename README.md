@@ -1,4 +1,11 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>Python Test Framework for testing Frontend and Backend functionality.md</title><style></style></head><body id="preview">
+<p>
+<details>
+<summary>example</summary>
+
+![query](https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/query_scr.jpg)
+
+</details>
+
 <h2 class="code-line" data-line-start="0" data-line-end="1"><a id="QA_Data_Helper_0"></a>QA Data Helper</h2>
 <h5 class="code-line" data-line-start="1" data-line-end="2"><a id="Data_Visualization_Statistics_and_Metrics_for_daily_testing_tasks_1"></a>Data Visualization, Statistics and Metrics for daily testing tasks</h5>
 <h5 class="code-line" data-line-start="2" data-line-end="3"><a id="Extension_for_Broadcom_Rally_Agile_tool_2"></a>Extension for Broadcom Rally Agile tool</h5>
@@ -12,8 +19,6 @@
 <h5 class="code-line" data-line-start="12" data-line-end="13"><a id="The_tool_helps_in_planning_testing_estimating_tasks_optimizing_the_set_of_test_cases_and_much_more_12"></a>The tool helps in planning testing, estimating tasks, optimizing the set of test cases, and much more</h5>
 <h1 class="code-line" data-line-start="14" data-line-end="15"><a id="_14"></a></h1>
 <h1 class="code-line" data-line-start="15" data-line-end="16"><a id="_15"></a></h1>
-<h1 class="code-line" data-line-start="16" data-line-end="17"><a id="_16"></a></h1>
-<h1 class="code-line" data-line-start="17" data-line-end="18"><a id="_17"></a></h1>
 <h4 class="code-line" data-line-start="19" data-line-end="20"><a id="Features_19"></a>Features</h4>
 <ul>
 <li class="has-line-data" data-line-start="20" data-line-end="23">Search capabilities
@@ -32,7 +37,7 @@
 <li class="has-line-data" data-line-start="25" data-line-end="26">Simple way to copy filtered test list into feature, test report, etc</li>
 <details>
   <summary>example</summary>
-  ![query](https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/structures_scr.jpg)
+  ![query2](https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/structures_scr.jpg)
 </details>
 </ul>
 </li>
@@ -46,7 +51,7 @@
 <li class="has-line-data" data-line-start="32" data-line-end="33">Display of the number of test cases for each type</li>
 <details>
   <summary>example</summary>
-  ![query](https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/details_scr.jpg)
+  ![query3](https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/details_scr.jpg)
 </details>
 </ul>
 </li>
@@ -56,7 +61,7 @@
 <li class="has-line-data" data-line-start="35" data-line-end="36">For a three-month period (depending on the project’s release frequency)</li>
 <details>
   <summary>example</summary>
-  ![query](https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/timeline_scr.jpg)
+  ![query4](https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/timeline_scr.jpg)
 </details>
 </ul>
 </li>
@@ -66,7 +71,7 @@
 <li class="has-line-data" data-line-start="38" data-line-end="39">Output of brief statistics for each selective set</li>
 <details>
   <summary>example</summary>
-  ![query](https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/ext_details_scr.jpg)
+  ![query5](https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/ext_details_scr.jpg)
 </details>
 </ul>
 </li>
