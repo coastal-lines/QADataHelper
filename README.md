@@ -21,8 +21,8 @@
 <li class="has-line-data" data-line-start="21" data-line-end="22">Using the original search syntax from Rally Agile</li>
 <li class="has-line-data" data-line-start="22" data-line-end="23">Additional search options within Input and Expected fields</li>
 <details>
-  <summary>Press open</summary>
-  Content
+  <summary>example</summary>
+  ![query](https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/query_scr.jpg)
 </details>
 </ul>
 </li>
@@ -30,6 +30,10 @@
 <ul>
 <li class="has-line-data" data-line-start="24" data-line-end="25">View the structure of test cases as a tree instead of non-informative sheet</li>
 <li class="has-line-data" data-line-start="25" data-line-end="26">Simple way to copy filtered test list into feature, test report, etc</li>
+<details>
+  <summary>example</summary>
+  ![query](https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/structures_scr.jpg)
+</details>
 </ul>
 </li>
 <li class="has-line-data" data-line-start="26" data-line-end="33">Data visualization
@@ -40,18 +44,30 @@
 <li class="has-line-data" data-line-start="30" data-line-end="31">Number of test steps and average number of text lines in steps</li>
 <li class="has-line-data" data-line-start="31" data-line-end="32">Ratio of manual to automated test cases</li>
 <li class="has-line-data" data-line-start="32" data-line-end="33">Display of the number of test cases for each type</li>
+<details>
+  <summary>example</summary>
+  ![query](https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/details_scr.jpg)
+</details>
 </ul>
 </li>
 <li class="has-line-data" data-line-start="33" data-line-end="36">Defect chart for a set of test cases
 <ul>
 <li class="has-line-data" data-line-start="34" data-line-end="35">For the entire period from the earliest defect to the latest</li>
 <li class="has-line-data" data-line-start="35" data-line-end="36">For a three-month period (depending on the project’s release frequency)</li>
+<details>
+  <summary>example</summary>
+  ![query](https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/timeline_scr.jpg)
+</details>
 </ul>
 </li>
 <li class="has-line-data" data-line-start="36" data-line-end="39">Advanced search and visualization of statistics for selective parameters
 <ul>
 <li class="has-line-data" data-line-start="37" data-line-end="38">Ratio of selective test cases to the total number of cases</li>
 <li class="has-line-data" data-line-start="38" data-line-end="39">Output of brief statistics for each selective set</li>
+<details>
+  <summary>example</summary>
+  ![query](https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/ext_details_scr.jpg)
+</details>
 </ul>
 </li>
 <li class="has-line-data" data-line-start="39" data-line-end="41">The ability to work with data in offline</li>
