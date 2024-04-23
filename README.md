@@ -16,7 +16,7 @@
 </ul>
 <p>
 <details>
-  <summary>example</summary>
+  <summary>screenshot</summary>
 
   ![query](https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/query_scr.jpg)
 </details>
@@ -27,7 +27,7 @@
 <li class="has-line-data" data-line-start="25" data-line-end="26">Simple way to copy filtered test list into feature, test report, etc</li>
 <p>
 <details>
-  <summary>example</summary>
+  <summary>screenshot</summary>
 
   ![structures_scr](https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/structures_scr.jpg)
 </details>
@@ -43,7 +43,7 @@
 <li class="has-line-data" data-line-start="32" data-line-end="33">Display of the number of test cases for each type</li>
 <p>
 <details>
-  <summary>example</summary>
+  <summary>screenshot</summary>
 
   ![details_scr](https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/details_scr.jpg)
 </details>
@@ -55,7 +55,7 @@
 <li class="has-line-data" data-line-start="35" data-line-end="36">For a three-month period (depending on the project’s release frequency)</li>
 <p>
 <details>
-  <summary>example</summary>
+  <summary>screenshot</summary>
 
   ![timeline_scr](https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/timeline_scr.jpg)
 </details>
@@ -67,7 +67,7 @@
 <li class="has-line-data" data-line-start="38" data-line-end="39">Output of brief statistics for each selective set</li>
 <p>
 <details>
-  <summary>example</summary>
+  <summary>screenshot</summary>
 
   ![ext_details_scr](https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/ext_details_scr.jpg)
 </details>
