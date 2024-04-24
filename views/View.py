@@ -2,10 +2,12 @@ import tkinter as tk
 from tkinter import ttk
 from bs4 import BeautifulSoup
 
+from resources.resources_dataclass import Resources
+from utils import file_helper
+from utils.converter_base64 import convert_into_base64
 from views.statistics.statistics_tabs import StatisticsTabs
 from views.setup.setup_tab import SetupTab
 from views.query.query_tab import QueryTab
-from utils.converter_base64 import convert_into_base64
 
 
 class View(tk.Tk):
@@ -89,7 +91,7 @@ class View(tk.Tk):
         """
             Update Structure of test cases
         """
-        html_base = "<html><body><h3>No results</h3><ul id='main'></ul></html>"
+        html_base = file_helper.load_file(Resources.no_results_testcases_html_file)
         html_document = BeautifulSoup(html_base, 'html.parser')
         self.statistics_tabs.structure_tab.html_frame.load_html(str(html_document.contents[0]))
 

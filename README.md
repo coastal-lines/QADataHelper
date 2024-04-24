@@ -3,9 +3,26 @@
 <h5 class="code-line" data-line-start="2" data-line-end="3"><a id="Extension_for_Broadcom_Rally_Agile_tool_2"></a>Extension for Broadcom Rally Agile tool</h5>
 <h1 class="code-line" data-line-start="3" data-line-end="4"><a id="_3"></a></h1>
 <p class="has-line-data" data-line-start="6" data-line-end="7"><img src="https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/main_scr.jpg?raw=true" alt="image"></p>
+
+<h1 class="code-line" data-line-start="8" data-line-end="9"><a id="_8"></a></h1>
+<h4 class="code-line" data-line-start="11" data-line-end="12"><a id="Description_11"></a>Motivation</h4>
+<pre>
+<code class="has-line-data" data-line-start="127" data-line-end="129" class="language-sh">Working on a complex project with highly demanding sprints, I decided to create a tool to streamline working with QA data. 
+Instead of tedious manual data collection, the tool allows for quickly obtaining visual statistics and other information.</code>
+</pre>
+
+
 <h1 class="code-line" data-line-start="8" data-line-end="9"><a id="_8"></a></h1>
 <h4 class="code-line" data-line-start="11" data-line-end="12"><a id="Description_11"></a>Description</h4>
-<p class="code-line" data-line-start="12" data-line-end="13"><a id="The_tool_helps_in_planning_testing_estimating_tasks_optimizing_the_set_of_test_cases_and_much_more_12"></a>The tool helps in planning testing, estimating tasks, optimizing the set of test cases, and much more</p>
+<pre>
+<code class="has-line-data" data-line-start="127" data-line-end="129" class="language-sh">Generally the tool helps in planning testing, estimating tasks, optimizing the set of test cases, etc.</code>
+</pre>
+<pre>
+<code class="has-line-data" data-line-start="127" data-line-end="129" class="language-sh">Can be especially helpful for using with Shift-Left testing approach in Agile teams</code>
+</pre>
+<pre>
+<code class="has-line-data" data-line-start="127" data-line-end="129" class="language-sh">Also, the tool can be useful for QA Leads in distributing tasks between teams</code>
+</pre>
 <h1 class="code-line" data-line-start="14" data-line-end="15"><a id="_14"></a></h1>
 <h4 class="code-line" data-line-start="19" data-line-end="20"><a id="Features_19"></a>Features</h4>
 <ul>

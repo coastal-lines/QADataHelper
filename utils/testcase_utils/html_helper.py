@@ -1,6 +1,9 @@
 from bs4 import BeautifulSoup
 import re
 
+from resources.resources_dataclass import Resources
+from utils import file_helper
+
 
 class HtmlHelper:
 
@@ -94,7 +97,8 @@ class HtmlHelper:
         root.append(new_ul)
         
     def create_html(self, list):
-        html_base = "<html><body><h3>Structure of test cases:</h3><ul id='main'></ul></html>"
+        html_base = file_helper.load_file(Resources.structure_testcases_html_file)
+
         html_document = BeautifulSoup(html_base, 'html.parser')
         tree, list_test_cases_without_parents = self.formTree(list)
         self.traversal_tree(tree, html_document, list_test_cases_without_parents)
@@ -102,7 +106,6 @@ class HtmlHelper:
         if (len(list_test_cases_without_parents) > 0):
             self.add_unstructured_test_cases_into_html(html_document, list_test_cases_without_parents)
 
-        #print(html_document.prettify())
         return html_document
         
     #for tc steps

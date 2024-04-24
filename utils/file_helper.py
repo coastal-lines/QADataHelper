@@ -1,6 +1,13 @@
+import os.path
 import pickle
 from tkinter import filedialog as fd
 
+
+def get_project_root_directory():
+    return os.path.join(os.path.dirname(os.getcwd()), "QADataHelper")
+
+def get_project_resources_directory():
+    return os.path.join(get_project_root_directory(), "resources\\data\\html_templates")
 
 def save_test_cases_into_file(test_cases):
     file_path = call_file_save_dialog()
