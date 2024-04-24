@@ -7,8 +7,11 @@
 <h1 class="code-line" data-line-start="8" data-line-end="9"><a id="_8"></a></h1>
 <h4 class="code-line" data-line-start="11" data-line-end="12"><a id="Description_11"></a>Motivation</h4>
 <pre>
-<code class="has-line-data" data-line-start="127" data-line-end="129" class="language-sh">Working on a complex project with highly demanding sprints, I decided to create a tool to streamline working with QA data. 
-Instead of tedious manual data collection, the tool allows for quickly obtaining visual statistics and other information.</code>
+<code class="has-line-data" data-line-start="127" data-line-end="129" class="language-sh">Working on a complex project with highly demanding sprints, 
+I decided to create a tool to streamline working with QA data.
+
+Instead of tedious manual data collection, 
+the tool allows for quickly obtaining visual statistics and other information.</code>
 </pre>
 
 
