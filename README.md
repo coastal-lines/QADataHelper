@@ -10,8 +10,6 @@
 <code class="has-line-data" data-line-start="127" data-line-end="129" class="language-sh">Working on a complex project with highly demanding sprints, 
 I decided to create a tool to streamline working with QA data.
 
-<p>
-</p>
 Instead of tedious manual data collection, 
 the tool allows for quickly obtaining visual statistics and other information.</code>
 </pre>
