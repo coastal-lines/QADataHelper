@@ -11,7 +11,12 @@
 I decided to create a tool to streamline working with QA data.
 <br>
 Instead of tedious manual data collection, 
-the tool allows for quickly obtaining visual statistics and other information.</code>
+the tool allows for quickly obtaining visual statistics and other information.
+<br>
+Among other things, I solved a very important issue - 
+searching within test cases for Inputs and Expected. 
+Rally does not support such functionality.
+</code>
 </pre>
 
 
