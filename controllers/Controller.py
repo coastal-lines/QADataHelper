@@ -59,9 +59,9 @@ class Controller():
         self.view.unlock_save_test_cases_button()
         self.view.update_view(self.test_cases)
         
-    def on_find_extra_test_cases_click(self, user_query_text):
+    def on_find_extra_test_cases_click(self, user_query_text: str):
         if(user_query_text != ""):
-            test_cases, data_for_charts = self.model.run_extra_query(user_query_text)
+            test_cases, result_for_statistics_tab = self.model.run_extra_query(user_query_text)
 
             if(len(test_cases) == 0):
                 print("Test cases were not found")
@@ -69,7 +69,7 @@ class Controller():
             else:
                 #update test cases list
                 self.view.update_view(test_cases)
-                self.view.update_view_extended_details(data_for_charts, len(self.model.get_test_cases()))
+                self.view.update_view_extended_details(result_for_statistics_tab, len(self.model.get_test_cases()))
                 
     def on_save_found_test_cases_click(self):
         file_helper.save_test_cases_into_file(self.test_cases)

@@ -1,4 +1,5 @@
 import configparser
+from typing import List
 
 
 class ConfigReader:
@@ -16,7 +17,7 @@ class ConfigReader:
 
         return values
 
-    def get_test_case_fields_from_config(self):
+    def get_test_case_fields_from_config(self) -> List[str]:
         test_case_fields = ConfigReader().get_parameters("DEFAULT")
         test_case_fields.extend(ConfigReader().get_parameters("EXTENDED"))
         test_case_fields.extend(ConfigReader().get_parameters("CUSTOM"))

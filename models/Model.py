@@ -1,3 +1,5 @@
+from typing import Tuple, List
+
 from models.parsing_testcase_fields import ParsingTestCaseFields
 from models.queries.query_formatter import QueryFormatter
 from service_components.service_test_case import ServiceTestCase
@@ -22,7 +24,7 @@ class Model:
     def get_test_cases(self):
         return self.list_test_cases
         
-    def run_extra_query(self, query):
+    def run_extra_query(self, query: str) -> Tuple[List[ServiceTestCase], List[ServiceTestCase]]:
         all_test_cases_result = []
         result = None
         result_for_statistics_tab = []
@@ -32,7 +34,7 @@ class Model:
             temp_result = None
             result = []
             for user_query in queries.get_queries():
-                temp_result = self.query_formatter._select_test_cases_by_query(self.list_test_cases, self.test_case_fields, user_query.where, user_query.text)
+                temp_result = self.query_formatter.select_test_cases_by_query(self.list_test_cases, self.test_case_fields, user_query.where, user_query.text)
                 result = self.extend_test_case_list(temp_result, result)
 
             result_for_statistics_tab.append((result, queries))
@@ -49,7 +51,7 @@ class Model:
 
         return parent_list
         
-    def run_query(self, service, credits, user_query_text, rootForTestCases, rootForFolders):
+    def run_query(self, service, credits, user_query_text, rootForTestCases, rootForFolders) -> List[ServiceTestCase]:
         """
             Get response with User's query
         """
@@ -67,7 +69,7 @@ class Model:
 
         return self.list_test_cases
         
-    def upload_all_test_cases(self, file_path):
+    def upload_all_test_cases(self, file_path: str) -> List[ServiceTestCase]:
         self.list_test_cases = file_helper.deserialization_data(file_path)
         return self.list_test_cases
         

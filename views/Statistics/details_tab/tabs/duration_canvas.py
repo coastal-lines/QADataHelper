@@ -1,11 +1,14 @@
+from typing import List
+
 import matplotlib.pyplot as plt
 
 from models.calculation_statistics_for_testcase_fields import CalculationStatisticsForTestCaseFields
+from service_components.service_test_case import ServiceTestCase
 from utils import visualization_helper
 
 
 class DurationCanvas:
-    def update_duration(self, details_frame, test_cases):
+    def update_duration(self, details_frame, test_cases: List[ServiceTestCase]):
         manual_time_duration, auto_time_duration = CalculationStatisticsForTestCaseFields().get_average_duration_for_test_cases(test_cases)
 
         duration_fig3, duration_ax3 = plt.subplots()

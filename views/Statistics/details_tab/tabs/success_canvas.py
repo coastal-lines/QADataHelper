@@ -1,11 +1,14 @@
+from typing import List
+
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
 
+from service_components.service_test_case import ServiceTestCase
 from utils import visualization_helper
 
 
 class SuccessCanvas:
-    def update_success(self, details_frame, test_cases):
+    def update_success(self, details_frame, test_cases: List[ServiceTestCase]):
 
         number_passed_tc = 0
         number_other_tc = 0

@@ -1,4 +1,8 @@
 import tkinter as tk
+from typing import List
+
+from service_components.service_test_case import ServiceTestCase
+
 
 class ListOfTestCasesTab:
 
@@ -13,7 +17,7 @@ class ListOfTestCasesTab:
 
         v.config(command=self.text_for_list_result.yview)
         
-    def update_list_test_cases(self, test_cases):
+    def update_list_test_cases(self, test_cases: List[ServiceTestCase]):
         str_list_of_formatted_ids_test_cases = ""
         self.text_for_list_result.delete(0.0, tk.END)
 

@@ -1,13 +1,16 @@
+from typing import List
+
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
 
+from service_components.service_test_case import ServiceTestCase
 from utils import visualization_helper
 from utils.config_reader import ConfigReader
 
 
 class TestTypesTab():
 
-    def update_test_types(self, details_frame, test_cases):
+    def update_test_types(self, details_frame, test_cases: List[ServiceTestCase]):
         test_types = ConfigReader().get_parameters("TESTTYPES")
 
         test_types_dict = dict()

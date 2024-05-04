@@ -1,10 +1,13 @@
 import datetime
 import tkinter as tk
+from typing import List
+
 import matplotlib.pyplot as plt
 import pandas as pd
 from dateutil.relativedelta import relativedelta
 import seaborn as sns
 
+from service_components.service_test_case import ServiceTestCase
 from utils import visualization_helper
 
 
@@ -15,7 +18,7 @@ class DefectsTimeLine:
         self.defects_time_line_frame = tk.Frame()
         self.defects_time_line_frame.place()
 
-    def update_defects_full_timeline(self, test_cases):
+    def update_defects_full_timeline(self, test_cases: List[ServiceTestCase]):
         sorted_defects_by_date = sorted([defect.get_defect() for tc in test_cases for defect in tc.DefectsInformation.get_defects_list()])
 
         start_date = pd.to_datetime(sorted_defects_by_date[0][0])
@@ -65,7 +68,7 @@ class DefectsTimeLine:
 
         visualization_helper.create_full_tab_canvas(self.defects_time_line_frame, _fig, 12.0, 3.5, 0, 0)
 
-    def update_defects_three_months_timeline(self, test_cases):
+    def update_defects_three_months_timeline(self, test_cases: List[ServiceTestCase]):
         sorted_defects_by_date = sorted([defect.get_defect() for tc in test_cases for defect in tc.DefectsInformation.get_defects_list()])
 
         start_date = pd.to_datetime(str((datetime.date.today() + relativedelta(months=1)) - relativedelta(months=3)))

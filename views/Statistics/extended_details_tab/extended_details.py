@@ -1,6 +1,10 @@
 import tkinter as tk
+from typing import List
+
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg)
+
+from utils.statistics.data_formatter import UserQueryData
 
 
 class ExtendedDetails:
@@ -32,7 +36,7 @@ class ExtendedDetails:
         self.canvas.config(yscrollcommand = scr.set)
         scr.config(command = self.canvas.yview)
         
-    def _create_figure_and_axes(self, data, number_all_test_cases):
+    def _create_figure_and_axes(self, data, number_all_test_cases: int):
         steps_fig, steps_ax = plt.subplots()
         plt.xticks(fontsize=8)
         plt.yticks(fontsize=8)
@@ -109,7 +113,7 @@ class ExtendedDetails:
         figure_canvas.draw()
         figure_canvas.get_tk_widget().place(x=0, y=0)
         
-    def update_screen(self, prepared_data, number_all_test_cases):
+    def update_screen(self, prepared_data: List[UserQueryData], number_all_test_cases: int):
         self._remove_all_already_existed_widgets()
         self._create_canvas()
 

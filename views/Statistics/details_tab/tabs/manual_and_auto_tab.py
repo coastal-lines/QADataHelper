@@ -1,10 +1,14 @@
+from typing import List
+
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
+
+from service_components.service_test_case import ServiceTestCase
 from utils import visualization_helper
 
 
 class ManualAutoTab:
-    def update_manual_auto(self, details_frame, test_cases):
+    def update_manual_auto(self, details_frame, test_cases: List[ServiceTestCase]):
         plt.rcParams['font.size'] = 10
 
         manual = 0

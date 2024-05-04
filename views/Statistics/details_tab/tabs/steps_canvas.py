@@ -1,5 +1,8 @@
+from typing import List
+
 import matplotlib.pyplot as plt
 
+from service_components.service_test_case import ServiceTestCase
 from utils import visualization_helper
 from utils.testcase_utils.html_helper import HtmlHelper
 
@@ -8,7 +11,7 @@ class StepsCanvas():
     def __init__(self):
         self.html_helper = HtmlHelper()
 
-    def update_steps(self, details_frame, test_cases):
+    def update_steps(self, details_frame, test_cases: List[ServiceTestCase]):
         number_steps = []
         for tc in test_cases:
             for input in tc.Inputs:

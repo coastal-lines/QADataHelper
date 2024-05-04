@@ -1,4 +1,7 @@
 import operator
+from typing import List
+
+from service_components.service_test_case import ServiceTestCase
 from utils.testcase_utils.html_helper import HtmlHelper
 
 
@@ -34,7 +37,7 @@ class CalculationStatisticsForTestCaseFields:
 
         return len(number_steps), average_number_lines_of_steps
 
-    def get_average_duration_for_test_cases(self, test_cases):
+    def get_average_duration_for_test_cases(self, test_cases: List[ServiceTestCase]):
         manual_time_duration = 0
         auto_time_duration = 0
 

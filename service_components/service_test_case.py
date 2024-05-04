@@ -1,2 +1,2 @@
-class ServiceTestCase():
+class ServiceTestCase:
     pass

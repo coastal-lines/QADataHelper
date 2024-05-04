@@ -1,5 +1,7 @@
 import tkinter as tk
+from typing import List
 
+from service_components.service_test_case import ServiceTestCase
 from views.statistics.details_tab.tabs.defects_canvas import DefectsCanvas
 from views.statistics.details_tab.tabs.duration_canvas import DurationCanvas
 from views.statistics.details_tab.tabs.manual_and_auto_tab import ManualAutoTab
@@ -20,7 +22,7 @@ class DetailsTab:
         self.manual_auto = ManualAutoTab()
         self.test_types = TestTypesTab()
         
-    def update(self, test_cases):
+    def update(self, test_cases: List[ServiceTestCase]):
         self.success.update_success(self.details_frame, test_cases)
         self.defects.update_defects(self.details_frame, test_cases)
         self.duration.update_duration(self.details_frame, test_cases)

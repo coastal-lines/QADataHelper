@@ -1,8 +1,11 @@
 import tkinter as tk
 from tkinter import ttk
+from typing import List
+
 from bs4 import BeautifulSoup
 
 from resources.resources_dataclass import Resources
+from service_components.service_test_case import ServiceTestCase
 from utils import file_helper
 from utils.converter_base64 import convert_into_base64
 from views.statistics.statistics_tabs import StatisticsTabs
@@ -68,17 +71,17 @@ class View(tk.Tk):
     def unlock_save_test_cases_button(self):
         self.query_tab.button_save_test_cases["state"] = "normal"
         
-    def get_server_instance(self):
+    def get_server_instance(self) -> str:
         return self.setup_tab.server_text.get()
         
-    def update_view(self, test_cases):
+    def update_view(self, test_cases: List[ServiceTestCase]):
         self.statistics_tabs.update_list_tab(test_cases)
         self.statistics_tabs.update_structure_tab(test_cases)
         self.statistics_tabs.update_details(test_cases)
         self.statistics_tabs.update_defects_timeline_tab(test_cases)
 
-    def update_view_extended_details(self, prepared_data, number_all_test_cases):
-        self.statistics_tabs.update_extended_details(prepared_data, number_all_test_cases)
+    def update_view_extended_details(self, result_for_statistics_tab: List[ServiceTestCase], number_all_test_cases: int):
+        self.statistics_tabs.update_extended_details(result_for_statistics_tab, number_all_test_cases)
         
     def update_view_null_result(self):
         """
