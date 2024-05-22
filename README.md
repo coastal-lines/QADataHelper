@@ -18,6 +18,7 @@ searching within test cases for Inputs and Expected.
 Rally does not support such functionality.
 <br>
 Please click on the image for navigating for watching demo on Youtube:
+
 [![[Python] Data Visualization, Statistics and Metrics for daily testing tasks](https://img.youtube.com/vi/k0eDJlsBjS0/0.jpg)](https://www.youtube.com/watch?v=k0eDJlsBjS0)
 </code>
 </pre>
