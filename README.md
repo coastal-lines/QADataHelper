@@ -19,7 +19,7 @@ Rally does not support such functionality.
 <br>
 Please click on the image for navigating for watching demo on Youtube:
 
-[![[Python] Data Visualization, Statistics and Metrics for daily testing tasks](https://img.youtube.com/vi/k0eDJlsBjS0/0.jpg)](https://www.youtube.com/watch?v=k0eDJlsBjS0)
+[![[Python] Data Visualization, Statistics and Metrics for daily testing tasks](https://github.com/coastal-lines/QADataHelper/blob/master/resources/data/doc/git_cover__.jpg?raw=true)](https://www.youtube.com/watch?v=g039aneLBck)
 </code>
 </pre>
 
